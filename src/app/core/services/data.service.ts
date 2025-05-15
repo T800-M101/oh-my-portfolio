@@ -123,7 +123,8 @@ export class DataService {
     placeholder_email: 'Your Email',
     placeholder_subject: 'Subject',
     placeholder_msg: 'Your Message',
-    send_msg: 'Send Message'
+    send_msg: 'Send Message',
+    rights: 'All rights reserved.'
   
   };
   
@@ -154,7 +155,8 @@ export class DataService {
       placeholder_email: 'Tu Correo',
       placeholder_subject: 'Asunto',
       placeholder_msg: 'Tu mensaje',
-      send_msg: 'Enviar Mensaje'
+      send_msg: 'Enviar Mensaje',
+      rights: 'Todos los derechos reservados.'
   };
 
   readonly projects_en = [

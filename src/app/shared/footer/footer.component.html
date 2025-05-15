@@ -1,16 +1,16 @@
 <footer>
     <div class="container">
         <div class="footer-content">
-            <div class="footer-logo">Guillermo Morán Lihaut</div>
+            <div class="footer-logo">{{profile.name}}</div>
             <div class="footer-links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
+                <a href="#home">{{templateData.home}}</a>
+                <a href="#about">{{templateData.about}}</a>
+                <a href="#skills">{{templateData.skills}}</a>
+                <a href="#projects">{{templateData.projects}}</a>
+                <a href="#contact">{{templateData.projects}}</a>
             </div>
             <div class="footer-copyright">
-                &copy; {{ currentYear }} Guillermo Morán Lihaut. All rights reserved.
+                &copy; {{ currentYear }} {{profile.name}} {{templateData.rights}}
             </div>
         </div>
     </div>
