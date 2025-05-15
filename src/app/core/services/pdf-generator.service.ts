@@ -11,7 +11,7 @@ export class PdfGeneratorService {
 
   constructor() {}
 
-  async generatePDF(profile: Profile, skills: Skill[]) {
+  async generatePDF(profile: Profile, skills: Skill[], template: any) {
     const doc = new jsPDF();
   
     const blueBarHeight = 40;
@@ -46,13 +46,12 @@ export class PdfGeneratorService {
     // About section
     doc.setFontSize(14);
     doc.setFont('helvetica', 'bold');
-    doc.text('About Me', 20, y);
+    doc.text(template.about_me, 20, y);
     y += 10;
 
     doc.setFontSize(12);
     doc.setFont('helvetica', 'normal');
-    const about = profile.about.replace('technologies.', 'technologies.\n\n');
-    const introLines = doc.splitTextToSize(about, 170);
+    const introLines = doc.splitTextToSize(profile.about, 170);
     doc.text(introLines, 20, y);
     y += introLines.length * 6 + 6;
   
@@ -64,7 +63,7 @@ export class PdfGeneratorService {
     // Skills section
     doc.setFontSize(14);
     doc.setFont('helvetica', 'bold');
-    doc.text('Skills', 20, y);
+    doc.text(template.skills, 20, y);
     y += 10;
   
     doc.setFontSize(11);
@@ -92,7 +91,7 @@ export class PdfGeneratorService {
     doc.setFontSize(10);
     doc.setFont('helvetica', 'italic');
     doc.text(
-      `Email: ${profile.email} | Portfolio: ${profile.email}`,
+      `${this.toTitleCase(template.email)}: ${profile.email} | ${template.portfolio}: ${profile.email}`,
       60,
       footerBarY + 6
     );
@@ -111,6 +110,14 @@ export class PdfGeneratorService {
       reader.onerror = reject;
       reader.readAsDataURL(blob);
     });
+  }
+
+  toTitleCase(str: string) {
+    return str
+      .toLowerCase()
+      .split(' ')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
   }
     
 }

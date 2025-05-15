@@ -1,0 +1,16 @@
+.dark-theme .hero {
+    background-color: var(--dark-surface);
+    color: var(--dark-text);
+  }
+  
+  .dark-theme .hero-content h1 span {
+    color: var(--dark-primary);
+  }
+  
+  .dark-theme .hero-content h2 {
+    color: var(--dark-text-secondary);
+  }
+  
+  .dark-theme .hero-content p {
+    color: var(--dark-text-secondary);
+}

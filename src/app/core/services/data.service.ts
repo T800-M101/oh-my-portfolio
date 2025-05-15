@@ -45,55 +45,71 @@ export class DataService {
 
   readonly skills_en = [
     { name: 'HTML5',
-      description: 'Semantic markap, accessibility, SEO optimization', id: 1 },
+      description: 'Semantic markap, accessibility, SEO optimization', 
+      id: 0 
+    },
     { name: 'CSS3',
-      description: 'Responsive design, animations, Flexbox/Grid',id: 2 },
+      description: 'Responsive design, animations, Flexbox/Grid',
+      id: 1 
+    },
     { name: 'JavaScript',
-      description: 'ES6+, DOM manipulation, async programming',id: 3 },
+      description: 'ES6+, DOM manipulation, async programming',
+      id: 2 
+    },
     {
       name: 'Angular',
-      description:
-        'Component-driven UI, reactive programming with RXJS, scalable arquitecture, dependency injection, object oriented programming',
-        id: 4
+      description:'Component-driven UI, reactive programming with RXJS, scalable arquitecture, dependency injection, object oriented programming',
+      id: 3
     },
     {
       name: 'Node JS',
-      description: 'Server-side Javascript, REST API´s, Express, functional programming', id: 5
+      description: 'Server-side Javascript, REST API´s, Express, functional programming', 
+      id: 4
     },
     {
       name: 'Nest JS',
       description: 'Skilled, in building scalable server-side applications using modular architecture. Experience with middleware, microservices and database integration.',
-      id: 6
+      id: 5
     },
     { name: 'Databases',
-      description: 'MongoDB, SQL', id: 7 },
+      description: 'MongoDB, SQL', 
+      id: 6 
+    },
   ];
 
 
   readonly skills_es = [
     { name: 'HTML5',
-      description: 'Marcado semántico, accesibilidad y optimización SEO', id: 1 },
+      description: 'Marcado semántico, accesibilidad y optimización SEO', 
+      id: 0
+    },
     { name: 'CSS3',
-      description: 'Diseño responsivo, animaciones, Flexbox/Grid',id: 2 },
+      description: 'Diseño responsivo, animaciones, Flexbox/Grid',
+      id: 1 
+    },
     { name: 'JavaScript',
-      description: 'ES6+, Manipulación DOM, programación asíncrona',id: 3 },
+      description: 'ES6+, Manipulación DOM, programación asíncrona',
+      id: 2 
+    },
     {
       name: 'Angular',
-      description:
-        'Interfaz de usuario basada en componentes, programación reactiva con RXJS, arquitectura escalable, inyección de dependencias, programación orientada a objetos',
-        id: 4
+      description:'Interfaz de usuario basada en componentes, programación reactiva con RXJS, arquitectura escalable, inyección de dependencias, programación orientada a objetos',
+      id: 3
     },
     {
       name: 'Node JS',
-      description: 'Javascript del lado del servidor, API REST, Express, programación funcional', id: 5
+      description: 'Javascript del lado del servidor, API REST, Express, programación funcional',
+      id: 4
     },
     {
       name: 'Nest JS',
       description: 'Experiencia en la creación de aplicaciones escalables del lado del servidor mediante arquitectura modular y middleware, microservicios e integración de bases de datos.',
-      id: 6
+      id: 5
     },
     { name: 'Bases de datos',
-      description: 'MongoDB, SQL', id: 7 },
+      description: 'MongoDB, SQL', 
+      id: 6 
+    }
   ];
 
   readonly template_en = {
@@ -124,7 +140,8 @@ export class DataService {
     placeholder_subject: 'Subject',
     placeholder_msg: 'Your Message',
     send_msg: 'Send Message',
-    rights: 'All rights reserved.'
+    rights: 'All rights reserved.',
+    portfolio: 'Portfolio'
   
   };
   
@@ -156,29 +173,30 @@ export class DataService {
       placeholder_subject: 'Asunto',
       placeholder_msg: 'Tu mensaje',
       send_msg: 'Enviar Mensaje',
-      rights: 'Todos los derechos reservados.'
+      rights: 'Todos los derechos reservados.',
+      portfolio: 'Portafolio'
   };
 
   readonly projects_en = [
     {
       name: 'E-commerce Website', 
       description: 'A fully responsive e-commerce platform with product filtering, cart functionality, and checkout process.',
-      techs: [{name: 'Angular', index: 1}, {name:'Node.js', index: 2}, {name: 'MongoDB', index:3}],
-      id: 1
+      techs: [{name: 'Angular', id: 0}, {name:'Node.js', id: 1}, {name: 'MongoDB', id: 2}],
+      id: 0
     },
 
     {
       name: 'Task Management App',
       description: 'A productivity application for managing tasks with drag-and-drop functionality and team collaboration.',
-      techs: [{name: 'Vue.js', index:1 }, {name: 'Firebase', index: 2}],
-      id:2
+      techs: [{name: 'Vue.js', id: 0 }, {name: 'Firebase', id: 1}],
+      id: 1
     },
 
     {
       name:'Portfolio Website',
       description: 'A custom portfolio website with animations and contact form.',
-      techs: [{name: 'HTML/CSS', index: 1}, {name: 'JavaScript', index: 2} ],
-      id:3
+      techs: [{name: 'HTML/CSS', id: 0}, {name: 'JavaScript', id: 1} ],
+      id: 2
     }
   ];
   
@@ -187,22 +205,22 @@ export class DataService {
     {
       name: 'E-commerce Website', 
       description: 'Una plataforma de comercio electrónico totalmente interactiva con filtrado de productos, funcionalidad de carrito y proceso de pago.',
-      techs: [{name: 'Angular', index: 1}, {name:'Node.js', index: 2}, {name: 'MongoDB', index:3}],
-      id: 1
+      techs: [{name: 'Angular', id: 0}, {name:'Node.js', id: 1}, {name: 'MongoDB', id: 2}],
+      id: 0
     },
 
     {
       name: 'Task Management App',
       description: 'Una aplicación de productividad para gestionar tareas con funcionalidad de arrastrar y soltar y colaboración en equipo.',
-      techs: [{name: 'Vue.js', index:1 }, {name: 'Firebase', index: 2}],
-      id:2
+      techs: [{name: 'Vue.js', id: 0 }, {name: 'Firebase', id: 1}],
+      id: 1
     },
 
     {
       name:'Portfolio Website',
       description: 'Un sitio web de portafolio personalizado con animaciones y formulario de contacto.',
-      techs: [{name: 'HTML/CSS', index: 1}, {name: 'JavaScript', index: 2} ],
-      id:3
+      techs: [{name: 'HTML/CSS', id: 0}, {name: 'JavaScript', id: 1} ],
+      id: 2
     }
   ];
   

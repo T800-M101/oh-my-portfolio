@@ -1,0 +1,47 @@
+/* Dark theme specific overrides */
+.dark-theme {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+  
+    header {
+      background-color: rgba(30, 30, 30, 0.95) !important;
+    }
+  
+    .hero {
+      background-color: var(--dark-surface);
+    }
+  
+    .skill-item,
+    .project-card,
+    .contact-form {
+      background-color: var(--dark-surface);
+      border: 1px solid var(--dark-divider);
+    }
+  
+    .project-tech span {
+      background-color: rgba(144, 202, 249, 0.1);
+      color: var(--dark-primary);
+    }
+  
+    .form-group input,
+    .form-group textarea {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-color: var(--dark-divider);
+      color: var(--dark-text);
+    }
+  
+    .footer-links a:hover {
+      color: var(--dark-primary);
+    }
+  
+    /* Language switch in dark mode */
+    .slider {
+      background-color: #555;
+    }
+  
+    /* WhatsApp button in dark mode */
+    .whatsapp-tooltip {
+      background-color: var(--dark-surface);
+      color: var(--dark-text);
+    }
+  }

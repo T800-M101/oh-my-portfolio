@@ -8,9 +8,34 @@
     --text-color: #333;
     --text-light: #7f8c8d;
     --white: #fff;
+    --white-mobile: #fff;
     --black: #000;
     --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
+
+     /* Dark theme variables */
+    --dark-bg: #121212;
+    --dark-surface: #1e1e1e;
+    --dark-text: #e0e0e0;
+    --dark-text-secondary: #a0a0a0;
+    --dark-primary: #90caf9;
+    --dark-secondary: #ce93d8;
+    --dark-accent: #ff7043;
+    --dark-divider: rgba(255, 255, 255, 0.12);    
+}
+
+/* Dark theme class */
+.dark-theme {
+    --primary-color: var(--dark-primary);
+    --secondary-color: var(--dark-secondary);
+    --accent-color: var(--dark-accent);
+    --light-color: var(--dark-surface);
+    --dark-color: var(--dark-bg);
+    --text-color: var(--dark-text);
+    --text-light: var(--dark-text-secondary);
+     --white: var(--dark-surface);
+    --black: var(--dark-text);
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 * {
@@ -292,6 +317,7 @@ nav ul li a:hover::after {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     margin: 30px 0;
+    width:105%;
 }
 
 .personal-info div span {
@@ -620,7 +646,7 @@ footer {
   .lang-label {
     font-weight: bold;
     font-size: 0.9rem;
-  }
+  } 
 
 /* Responsive Styles */
 @media (max-width: 992px) {
@@ -696,6 +722,44 @@ footer {
     .whatsapp-tooltip {
         display: none;
     }
+
+    .logo {
+        display: none; 
+    }
+
+    /* Base styles for mobile menu */
+  nav ul {
+    background-color: var(--white);
+  }
+  
+  nav ul li a {
+    color: var(--dark-color);
+  }
+
+  /* Active state (menu open) */
+  nav ul.active {
+    background-color: var(--white);
+  }
+
+  /* Dark mode styles */
+  nav ul.dark,
+  nav ul.dark.active {
+    background-color: var(--dark-surface);
+  }
+
+  nav ul.dark li a,
+  nav ul.dark.active li a {
+    color: var(--white-mobile) !important; /* Force white text in dark mode */
+  }
+
+  /* Menu toggle icon - dark mode */
+  nav ul.dark ~ .menu-toggle i,
+  nav ul.dark.active ~ .menu-toggle i {
+    color: var(--white);
+  }
+
+  
+    
 }
 
 @media (max-width: 576px) {
@@ -718,5 +782,9 @@ footer {
 
     .me {
         margin-top: 30px;
+    }
+
+    .logo {
+        display: none; 
     }
 }

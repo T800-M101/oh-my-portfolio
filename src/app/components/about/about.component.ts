@@ -15,6 +15,7 @@ export class AboutComponent implements DoCheck {
   ngDoCheck(): void {
     this.profile = this.dataService.getProfile();
     this.templateData = this.dataService.getTemplateData();
+    this.skills = this.dataService.getSkills();
   }
 
   dataService = inject(DataService);
@@ -35,6 +36,6 @@ export class AboutComponent implements DoCheck {
       description: this.profile.intro,
     };
 
-    this.pdfService.generatePDF(this.profile, this.skills);
+    this.pdfService.generatePDF(this.profile, this.skills, this.templateData);
   }
 }

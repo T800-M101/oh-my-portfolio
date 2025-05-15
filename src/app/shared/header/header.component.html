@@ -2,7 +2,7 @@
     <div class="container">
         <div class="logo">Guillermo Morán L.</div>
         <nav>
-            <ul [class.active]="menuOpen">
+            <ul [ngClass]="{ 'active': menuOpen, 'dark': themeService.getIsDark() }">
               <li><a routerLink="/" fragment="home" (click)="closeMenu()">{{templateData.home}}</a></li>
               <li><a routerLink="/" fragment="about" (click)="closeMenu()">{{templateData.about}}</a></li>
               <li><a routerLink="/" fragment="skills" (click)="closeMenu()">{{templateData.skills}}</a></li>
@@ -20,6 +20,7 @@
             </label>
             <span class="lang-label">{{ currentLanguage === 'en' ? 'EN' : 'ES' }}</span>
           </div>
+          <app-theme-toggle></app-theme-toggle>
     </div>
 </header>
 
