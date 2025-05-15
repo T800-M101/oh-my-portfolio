@@ -1,0 +1,28 @@
+<section id="about" class="about">
+    <div class="container">
+        <h2 class="section-title">{{templateData.about_me}}</h2>
+        <div class="about-content">
+            <div class="about-image">
+                <img id="profile-pic" src="{{profile.photo_2}}" alt="About Me">
+            </div>
+            <div class="about-text">
+                <p>{{profile.about}}</p>
+                <div class="personal-info">
+                    <div>
+                        <span>{{templateData.name}}:</span> {{profile.name}}
+                    </div>
+                    <div>
+                        <span>{{templateData.email}}:</span> {{profile.email}}
+                    </div>
+                    <div>
+                        <span>{{templateData.experience}}:</span> {{profile.experience}} {{templateData.years}}
+                    </div>
+                    <div>
+                        <span>{{templateData.location}}:</span> {{profile.location}}
+                    </div>
+                </div>
+                <a id="generate-cv" class="btn" (click)="generateCV()">{{templateData.pdf}}</a>
+            </div>
+        </div>
+    </div>
+</section>

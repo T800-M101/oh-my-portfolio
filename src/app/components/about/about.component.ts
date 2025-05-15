@@ -1,5 +1,5 @@
-import { Component, inject } from '@angular/core';
-import { ProfileDataService } from '../../core/services/profile-data.service';
+import { Component, DoCheck, inject } from '@angular/core';
+import { DataService } from '../../core/services/data.service';
 import { PdfGeneratorService } from '../../core/services/pdf-generator.service';
 import { Profile } from '../../core/interfaces/profile.interface';
 import { Skill } from '../../core/interfaces/skill.interface';
@@ -9,14 +9,20 @@ import { Skill } from '../../core/interfaces/skill.interface';
   standalone: true,
   imports: [],
   templateUrl: './about.component.html',
-  styleUrl: './about.component.scss'
+  styleUrl: './about.component.scss',
 })
-export class AboutComponent {
-  profileDataService = inject( ProfileDataService );
-  private pdfService = inject( PdfGeneratorService );
+export class AboutComponent implements DoCheck {
+  ngDoCheck(): void {
+    this.profile = this.dataService.getProfile();
+    this.templateData = this.dataService.getTemplateData();
+  }
 
-  profile: Profile = this.profileDataService.getProfile();
-  skills: Skill[] = this.profileDataService.getSkills();
+  dataService = inject(DataService);
+  private pdfService = inject(PdfGeneratorService);
+
+  profile: Profile = this.dataService.getProfile();
+  skills: Skill[] = this.dataService.getSkills();
+  templateData = this.dataService.getTemplateData();
 
   get aboutTextWithBreak(): string {
     return this.profile.about.replace('technologies.', 'technologies.<br><br>');
@@ -32,5 +38,3 @@ export class AboutComponent {
     this.pdfService.generatePDF(this.profile, this.skills);
   }
 }
-
-

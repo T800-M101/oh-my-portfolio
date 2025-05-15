@@ -1,0 +1,27 @@
+<section id="projects" class="projects">
+    <div class="container">
+        <h2 class="section-title">{{templateData.my_projects}}</h2>
+        <div class="projects-grid">
+            @for(project of projects; track project.id) {
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/assets/ecommerce.jpeg" alt="ecommerce">
+                    </div>
+                    <div class="project-info">
+                        <h3>{{project.name}}</h3>
+                        <p>{{project.description}}</p>
+                        <div class="project-tech">
+                            @for( tech of project.techs; track tech.id) {
+                                <span>{{tech.name}}</span>
+                            }
+                        </div>
+                        <div class="project-links">
+                            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i>{{templateData.demo}}</a>
+                            <a href="#" target="_blank"><i class="fab fa-github"></i> {{templateData.code}}</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

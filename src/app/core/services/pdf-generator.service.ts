@@ -22,7 +22,7 @@ export class PdfGeneratorService {
   
     // Optional: Add profile image inside the top bar
     try {
-      const base64Image = await this.getImageBase64(profile.photo);
+      const base64Image = await this.getImageBase64(profile.photo_3);
       doc.addImage(base64Image, 'JPEG', 15, 15, 30, 30); // fits within blue bar
     } catch (err) {
       console.error('Image load error:', err);

@@ -1,10 +1,10 @@
 <section id="contact" class="contact">
     <div class="container">
-        <h2 class="section-title">Get In Touch</h2>
+        <h2 class="section-title">{{templateData.get_in_touch}}</h2>
         <div class="contact-content">
             <div class="contact-info">
-                <h3>Let's talk about your project</h3>
-                <p>Feel free to reach out if you're looking for a developer, have a question, or just want to connect.</p>
+                <h3>{{templateData.lets_talk}}</h3>
+                <p>{{templateData.contact_msg}}</p>
                 <div class="contact-details">
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
@@ -20,24 +20,24 @@
                     </div>
                 </div>
                 <div class="social-links">
-                    <a [href]="profile.github"><i target="_blank" class="fab fa-github"></i></a>
-                    <a [href]="profile.linkedin"><i target="_blank" class="fab fa-linkedin"></i></a>
+                    <a [href]="profile.github" target="_blank"><i class="fab fa-github"></i></a>
+                    <a [href]="profile.linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
             <form [formGroup]="contactForm" class="contact-form" (ngSubmit)="onSubmit()">
                 <div class="form-group">
-                    <input type="text" formControlName="name" placeholder="Your Name" required>
+                    <input type="text" formControlName="name" placeholder="{{templateData.placeholder_name}}" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" formControlName="email" placeholder="Your Email" required>
+                    <input type="email" formControlName="email" placeholder="{{templateData.placeholder_email}}" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" formControlName="subject" placeholder="Subject">
+                    <input type="text" formControlName="subject" placeholder="{{templateData.placeholder_subject}}">
                 </div>
                 <div class="form-group">
-                    <textarea placeholder="Your Message" formControlName="message" required></textarea>
+                    <textarea placeholder="{{templateData.placeholder_message}}" formControlName="message" required></textarea>
                 </div>
-                <button type="submit" class="btn">Send Message</button>
+                <button type="submit" class="btn">{{templateData.send_msg}}</button>
             </form>
         </div>
     </div>
