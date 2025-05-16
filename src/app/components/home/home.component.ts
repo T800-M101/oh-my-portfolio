@@ -12,17 +12,18 @@ import { Profile } from '../../core/interfaces/profile.interface';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit, DoCheck {
-  ngDoCheck(): void {
-    this.profile = this.dataService.getProfile();
-    this.templateData = this.dataService.getTemplateData();
-  }
-
   dataService = inject(DataService);
   route = inject(ActivatedRoute);
+
 
   profile: Profile = this.dataService.getProfile();
   templateData: any = this.dataService.getTemplateData();
 
+  ngDoCheck(): void {
+    this.profile = this.dataService.getProfile();
+    this.templateData = this.dataService.getTemplateData();
+  }
+  
   ngOnInit() {
     this.route.fragment
       .pipe(filter((fragment) => !!fragment))

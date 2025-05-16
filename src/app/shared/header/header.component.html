@@ -1,6 +1,6 @@
 <header>
     <div class="container">
-        <div class="logo">Guillermo Morán L.</div>
+        <div class="logo">{{profile.name}}</div>
         <nav>
             <ul [ngClass]="{ 'active': menuOpen, 'dark': themeService.getIsDark() }">
               <li><a routerLink="/" fragment="home" (click)="closeMenu()">{{templateData.home}}</a></li>
@@ -13,13 +13,7 @@
               <i class="fas" [class.fa-bars]="!menuOpen" [class.fa-times]="menuOpen"></i>
             </div>
           </nav>
-          <div class="language-switch">
-            <label class="switch">
-              <input type="checkbox" (change)="toggleLanguage($event)" [checked]="currentLanguage === 'es'">
-              <span class="slider round"></span>
-            </label>
-            <span class="lang-label">{{ currentLanguage === 'en' ? 'EN' : 'ES' }}</span>
-          </div>
+          <app-language-switcher></app-language-switcher>
           <app-theme-toggle></app-theme-toggle>
     </div>
 </header>

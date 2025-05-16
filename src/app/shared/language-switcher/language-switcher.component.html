@@ -1,0 +1,7 @@
+<div class="language-switch">
+    <label class="switch">
+      <input type="checkbox" (change)="toggleLanguage($event)" [checked]="currentLanguage === 'es'">
+      <span class="slider round"></span>
+    </label>
+    <span class="lang-label">{{ currentLanguage === 'en' ? 'EN' : 'ES' }}</span>
+</div>

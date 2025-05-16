@@ -1,37 +1,22 @@
-import { Component, inject } from '@angular/core';
+import { Component, DoCheck, inject } from '@angular/core';
 import { ThemeService } from '../../core/services/theme.service';
+import { DataService } from '../../core/services/data.service';
 
 @Component({
   selector: 'app-theme-toggle',
   standalone: true,
-  template: `
-    <button (click)="toggleTheme()" class="theme-toggle">
-      <i class="fas" [class.fa-moon]="themeService.currentTheme() === 'light'" 
-                    [class.fa-sun]="themeService.currentTheme() === 'dark'"></i>
-      <span>{{ themeService.currentTheme() === 'light' ? 'Dark' : 'Light' }} Mode</span>
-    </button>
-  `,
-  styles: [`
-    .theme-toggle {
-      background: none;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--text-color);
-      font-weight: 500;
-      i {
-        font-size: 1.2rem;
-      }
-      &:hover {
-        opacity: 0.8;
-      }
-    }
-  `]
+  templateUrl: './theme-toggle.component.html',
+  styleUrl: './theme-toggle.component.scss'
 })
-export class ThemeToggleComponent {
+export class ThemeToggleComponent  implements DoCheck{
   themeService = inject(ThemeService);
+  dataService = inject(DataService);
+  
+  templateData = this.dataService.getTemplateData();
+  
+  ngDoCheck(): void {
+    this.templateData = this.dataService.getTemplateData();
+  }
 
   toggleTheme() {
     this.themeService.toggleTheme();

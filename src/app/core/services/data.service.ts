@@ -141,7 +141,9 @@ export class DataService {
     placeholder_msg: 'Your Message',
     send_msg: 'Send Message',
     rights: 'All rights reserved.',
-    portfolio: 'Portfolio'
+    portfolio: 'Portfolio',
+    dark_mode: 'Dark Mode',
+    light_mode: 'Light Mode'
   
   };
   
@@ -174,7 +176,9 @@ export class DataService {
       placeholder_msg: 'Tu mensaje',
       send_msg: 'Enviar Mensaje',
       rights: 'Todos los derechos reservados.',
-      portfolio: 'Portafolio'
+      portfolio: 'Portafolio',
+      dark_mode: 'Modo Oscuro',
+      light_mode: 'Modo Claro'
   };
 
   readonly projects_en = [

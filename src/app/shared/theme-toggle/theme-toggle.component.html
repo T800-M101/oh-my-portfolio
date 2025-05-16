@@ -1,0 +1,7 @@
+<button (click)="toggleTheme()" class="theme-toggle">
+    <i class="fas" 
+       [class.fa-moon]="themeService.currentTheme() === 'light'" 
+        [class.fa-sun]="themeService.currentTheme() === 'dark'">
+    </i>
+    <span>{{ themeService.currentTheme() === 'light' ? templateData.light_mode : templateData.dark_mode}}  </span>
+</button>
