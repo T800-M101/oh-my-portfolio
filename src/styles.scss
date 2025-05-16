@@ -833,3 +833,68 @@ input:checked+.slider:before {
         display: none;
     }
 }
+
+@media screen and (max-width: 430px) {
+    body {
+        font-size: 16px;
+    }
+
+    .container {
+        width: 95%;
+        padding: 0 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        background-color: var(--white);
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 100%;
+        display: none; /* Make toggleable with JS */
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero .container {
+        flex-direction: column;
+    }
+
+    .hero-image {
+        margin-top: 30px;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .skills-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-content {
+        flex-direction: column;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
