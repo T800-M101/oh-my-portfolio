@@ -860,7 +860,12 @@ input:checked+.slider:before {
         top: 80px;
         right: 0;
         width: 100%;
-        display: none; /* Make toggleable with JS */
+        left: -100%;
+        transition: var(--transition);
+    }
+
+    nav ul.active {
+        left: 0;
     }
 
     .menu-toggle {
