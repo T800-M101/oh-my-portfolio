@@ -6,6 +6,7 @@ import { ThemeService } from '../../core/services/theme.service';
 import { CommonModule } from '@angular/common';
 import { LanguageSwitcherComponent } from '../language-switcher/language-switcher.component';
 import { Profile } from '../../core/interfaces/profile.interface';
+import { Template } from '../../core/interfaces/template.interface';
 
 @Component({
   selector: 'app-header',
@@ -16,12 +17,13 @@ import { Profile } from '../../core/interfaces/profile.interface';
 })
 export class HeaderComponent implements DoCheck {
  
-  dataService = inject(DataService);
+  private dataService = inject(DataService);
   themeService = inject(ThemeService);
+
   profile: Profile = this.dataService.getProfile();
+  templateData: Template = this.dataService.getTemplateData();
 
   menuOpen = false;
-  templateData = this.dataService.getTemplateData();
 
   ngDoCheck(): void {
     this.templateData = this.dataService.getTemplateData();

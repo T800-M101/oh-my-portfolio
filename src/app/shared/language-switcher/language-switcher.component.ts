@@ -11,19 +11,20 @@ import { LanguageService } from '../../core/services/language.service';
 export class LanguageSwitcherComponent {
 
   ngOnInit(): void {
-    const ls = localStorage.getItem('lang');
-    this.currentLanguage = ls || 'en';
-    this.languageService.currentLanguage.set(this.currentLanguage);
+    const storage = localStorage.getItem('lang');
+    this.currentLanguage = storage || 'en';
+    this.languageService.setCurrentLanguage(this.currentLanguage);
   }
+
   currentLanguage = 'en';
 
-  languageService = inject(LanguageService);
+  private languageService = inject(LanguageService);
 
   
   toggleLanguage(event: Event) {
     const isChecked = (event.target as HTMLInputElement).checked;
     this.currentLanguage = isChecked ? 'es' : 'en';
-    this.languageService.currentLanguage.set(this.currentLanguage);
+    this.languageService.setCurrentLanguage(this.currentLanguage);
     localStorage.setItem('lang', this.currentLanguage);
   }
 }

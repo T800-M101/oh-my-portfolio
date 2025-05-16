@@ -1,11 +1,22 @@
 import { Injectable, signal } from '@angular/core';
 
+
+
 @Injectable({
   providedIn: 'root'
 })
 export class LanguageService {
 
-  currentLanguage = signal('en');
+  private currentLanguage = signal<string>('en');
 
-  constructor() { }
+
+  setCurrentLanguage(lang: string): void {
+    if (!['en', 'es'].includes(lang)) return;
+    this.currentLanguage.set(lang);
+  }
+
+  getCurrentLanguage(): string {
+    return this.currentLanguage();
+  }
+
 }

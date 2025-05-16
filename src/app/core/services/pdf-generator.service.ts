@@ -9,8 +9,6 @@ import { Skill } from '../interfaces/skill.interface';
 })
 export class PdfGeneratorService {
 
-  constructor() {}
-
   async generatePDF(profile: Profile, skills: Skill[], template: any) {
     const doc = new jsPDF();
   

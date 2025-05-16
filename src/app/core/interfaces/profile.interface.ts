@@ -9,6 +9,7 @@ export interface Profile {
   phone: string;
   location: string;
   about: string;
+  about_2: string;
   experience: string;
   linkedin: string;
   github:string;

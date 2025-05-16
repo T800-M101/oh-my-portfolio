@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { filter } from 'rxjs';
 import { DataService } from '../../core/services/data.service';
 import { Profile } from '../../core/interfaces/profile.interface';
+import { Template } from '../../core/interfaces/template.interface';
 
 @Component({
   selector: 'app-home',
@@ -12,12 +13,12 @@ import { Profile } from '../../core/interfaces/profile.interface';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit, DoCheck {
-  dataService = inject(DataService);
-  route = inject(ActivatedRoute);
+  private dataService = inject(DataService);
+  private route = inject(ActivatedRoute);
 
 
   profile: Profile = this.dataService.getProfile();
-  templateData: any = this.dataService.getTemplateData();
+  templateData: Template = this.dataService.getTemplateData();
 
   ngDoCheck(): void {
     this.profile = this.dataService.getProfile();

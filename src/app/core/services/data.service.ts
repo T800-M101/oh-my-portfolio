@@ -2,15 +2,17 @@ import { inject, Injectable } from '@angular/core';
 import { Profile } from '../interfaces/profile.interface';
 import { Skill } from '../interfaces/skill.interface';
 import { LanguageService } from './language.service';
+import { Template } from '../interfaces/template.interface';
+import { Project } from '../interfaces/project.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
 
-  languageService = inject(LanguageService);
+  private languageService = inject(LanguageService);
 
-  readonly profile_en = {
+  private readonly profile_en = {
     name: 'Guillermo Morán L.',
     title: 'Software Engineer',
     intro: 'I build exceptional digital experiences that make an impact.',
@@ -22,12 +24,13 @@ export class DataService {
     location: 'Chihuahua, México',
     about:
       "I'm a passionate web developer with 6 years of experience creating modern, responsive websites and web applications. I specialize in front-end development but also have experience with back-end technologies. My approach combines technical expertise with an eye for design to deliver solutions that are both functional and visually appealing.",
+    about_2: 'I like to contribute to the generation of a pleasant work environment. I believe teamwork is the way to go.',
     experience: '6',
     linkedin: 'https://www.linkedin.com/in/guillermo-moran-8290b0106/',
     github: 'https://github.com/T800-M101/oh-my-portfolio'
   };
 
-  readonly profile_es = {
+  private readonly profile_es = {
     name: 'Guillermo Morán L.',
     title: 'Ingeniero de Software',
     intro: 'Hago experiencias digitales exepcionales que crean impacto.',
@@ -37,13 +40,14 @@ export class DataService {
     email: 'tuahil@gmail.com',
     phone: '+52 614 303 8485',
     location: 'Chihuahua, México',
-    about: "Soy un desarrollador web apasionado con 6 años de experiencia creando sitios y aplicaciones web modernos y responsivos. Me especializo en desarrollo front-end, pero también tengo experiencia con tecnologías back-end. Mi enfoque combina conocimientos técnicos con una visión de diseño para ofrecer soluciones funcionales y visualmente atractivas.",
+    about: "Soy un desarrollador web apasionado con 6 años de experiencia creando sitios web y aplicaciones web modernos y adaptables. Me especializo en desarrollo front-end, pero también tengo experiencia con tecnologías back-end. Mi enfoque combina conocimientos técnicos con una visión de diseño para ofrecer soluciones funcionales y visualmente atractivas.",
+    about_2: 'Me gusta contribuir a la creación de un ambiente de trabajo agradable. Creo que el trabajo en equipo es fundamental.',
     experience: '6',
     linkedin: 'https://www.linkedin.com/in/guillermo-moran-8290b0106/',
     github: 'https://github.com/T800-M101/oh-my-portfolio'
   };
 
-  readonly skills_en = [
+  private readonly skills_en = [
     { name: 'HTML5',
       description: 'Semantic markap, accessibility, SEO optimization', 
       id: 0 
@@ -71,14 +75,24 @@ export class DataService {
       description: 'Skilled, in building scalable server-side applications using modular architecture. Experience with middleware, microservices and database integration.',
       id: 5
     },
+    {
+      name: 'Python',
+      description: 'Skilled in building scalable microservices using Python, with experience in designing RESTful APIs, asynchronous processing, and containerized deployments.',
+      id: 6
+    },
+    {
+      name: 'Flask',
+      description: 'Proficient in developing lightweight and scalable microservices using Flask, leveraging its simplicity and flexibility to build RESTful APIs.',
+      id: 7
+    },
     { name: 'Databases',
       description: 'MongoDB, SQL', 
-      id: 6 
+      id: 8
     },
   ];
 
 
-  readonly skills_es = [
+  private readonly skills_es = [
     { name: 'HTML5',
       description: 'Marcado semántico, accesibilidad y optimización SEO', 
       id: 0
@@ -106,13 +120,24 @@ export class DataService {
       description: 'Experiencia en la creación de aplicaciones escalables del lado del servidor mediante arquitectura modular y middleware, microservicios e integración de bases de datos.',
       id: 5
     },
+    {
+      name: 'Python',
+      description: 'Experiencia en la creación de microservicios escalables utilizando Python, con experiencia en el diseño de API RESTful, procesamiento asincrónico e implementaciones en contenedores.',
+      id: 6
+    },
+    {
+      name: 'Flask',
+      description: 'Experiencia en el desarrollo de microservicios livianos y escalables utilizando Flask, aprovechando su simplicidad y flexibilidad para construir API RESTful.',
+      id: 7
+
+    },
     { name: 'Bases de datos',
       description: 'MongoDB, SQL', 
-      id: 6 
+      id: 8 
     }
   ];
 
-  readonly template_en = {
+  private readonly template_en = {
     greeting: "Hi, I'm",
     view_work: 'View My Work',
     contact_me: 'Contact Me',
@@ -147,8 +172,8 @@ export class DataService {
   
   };
   
-  readonly template_es = {
-      greeting: 'Hola, Yo soy',
+  private readonly template_es = {
+      greeting: 'Hola, Soy',
       view_work: 'Ve mi trabajo',
       contact_me: 'Contáctame',
       home: 'Inicio',
@@ -181,7 +206,7 @@ export class DataService {
       light_mode: 'Modo Claro'
   };
 
-  readonly projects_en = [
+  private readonly projects_en = [
     {
       name: 'E-commerce Website', 
       description: 'A fully responsive e-commerce platform with product filtering, cart functionality, and checkout process.',
@@ -205,7 +230,7 @@ export class DataService {
   ];
   
 
-  readonly projects_es = [
+  private readonly projects_es = [
     {
       name: 'E-commerce Website', 
       description: 'Una plataforma de comercio electrónico totalmente interactiva con filtrado de productos, funcionalidad de carrito y proceso de pago.',
@@ -230,19 +255,19 @@ export class DataService {
   
 
   getProfile(): Profile {
-    return this.languageService.currentLanguage() === 'es' ? this.profile_es : this.profile_en;
+    return this.languageService.getCurrentLanguage() === 'es' ? this.profile_es : this.profile_en;
   }
 
   getSkills(): Skill[] {
-    return this.languageService.currentLanguage() === 'es' ? this.skills_es : this.skills_en;
+    return this.languageService.getCurrentLanguage() === 'es' ? this.skills_es : this.skills_en;
   }
 
-  getTemplateData(): any {
-    return this.languageService.currentLanguage() === 'es' ? this.template_es : this.template_en;
+  getTemplateData(): Template {
+    return this.languageService.getCurrentLanguage() === 'es' ? this.template_es : this.template_en;
   }
 
-  getProjects(): any {
-    return this.languageService.currentLanguage() === 'es' ? this.projects_es : this.projects_en;
+  getProjects(): Project[] {
+    return this.languageService.getCurrentLanguage() === 'es' ? this.projects_es : this.projects_en;
   }
  
 }

@@ -3,6 +3,7 @@ import { DataService } from '../../core/services/data.service';
 import { PdfGeneratorService } from '../../core/services/pdf-generator.service';
 import { Profile } from '../../core/interfaces/profile.interface';
 import { Skill } from '../../core/interfaces/skill.interface';
+import { Template } from '../../core/interfaces/template.interface';
 
 @Component({
   selector: 'app-about',
@@ -12,23 +13,20 @@ import { Skill } from '../../core/interfaces/skill.interface';
   styleUrl: './about.component.scss',
 })
 export class AboutComponent implements DoCheck {
+  
+  private dataService = inject(DataService);
+  private pdfService = inject(PdfGeneratorService);
+  
+  profile: Profile = this.dataService.getProfile();
+  skills: Skill[] = this.dataService.getSkills();
+  templateData: Template = this.dataService.getTemplateData();
+  
   ngDoCheck(): void {
     this.profile = this.dataService.getProfile();
     this.templateData = this.dataService.getTemplateData();
     this.skills = this.dataService.getSkills();
   }
-
-  dataService = inject(DataService);
-  private pdfService = inject(PdfGeneratorService);
-
-  profile: Profile = this.dataService.getProfile();
-  skills: Skill[] = this.dataService.getSkills();
-  templateData = this.dataService.getTemplateData();
-
-  get aboutTextWithBreak(): string {
-    return this.profile.about.replace('technologies.', 'technologies.<br><br>');
-  }
-
+  
   generateCV() {
     const profile = {
       name: this.profile.name,

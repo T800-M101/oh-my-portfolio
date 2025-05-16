@@ -8,6 +8,8 @@ import {
 } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { DataService } from '../../core/services/data.service';
+import { Profile } from '../../core/interfaces/profile.interface';
+import { Template } from '../../core/interfaces/template.interface';
 
 @Component({
   selector: 'app-contact',
@@ -17,18 +19,17 @@ import { DataService } from '../../core/services/data.service';
   styleUrl: './contact.component.scss',
 })
 export class ContactComponent implements DoCheck {
-
+  private dataService = inject(DataService);
+  contactForm: FormGroup;
+  
+  profile: Profile = this.dataService.getProfile();
+  templateData: Template = this.dataService.getTemplateData();
+  
+  
   ngDoCheck(): void {
     this.profile = this.dataService.getProfile();
     this.templateData = this.dataService.getTemplateData();
   }
-  
-  dataService = inject(DataService);
-
-  profile = this.dataService.getProfile();
-  templateData = this.dataService.getTemplateData();
-
-  contactForm: FormGroup;
 
   constructor(
     private fb: FormBuilder,
