@@ -12,7 +12,7 @@ import { Profile } from '../../core/interfaces/profile.interface';
   standalone: true,
   imports: [RouterModule, ThemeToggleComponent, LanguageSwitcherComponent, CommonModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrl: './header.component.scss',
 })
 export class HeaderComponent implements DoCheck {
  
