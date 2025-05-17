@@ -23,16 +23,34 @@ export class DataService {
     phone: '+52 614 303 8485',
     location: 'Chihuahua, México',
     about:
-      "I'm a passionate web developer with 6 years of experience creating modern, responsive websites and web applications. I specialize in front-end development but also have experience with back-end technologies. My approach combines technical expertise with an eye for design to deliver solutions that are both functional and visually appealing.",
+      "I'm a passionate web developer with 6 years of experience building modern, responsive websites and web applications. I'm a full-stack developer. I have experience with both front-end and back-end technologies. My approach combines technical knowledge with a design vision to deliver functional and visually appealing solutions.",
     about_2: 'I like to contribute to the generation of a pleasant work environment. I believe teamwork is the way to go.',
     experience: '6',
     linkedin: 'https://www.linkedin.com/in/guillermo-moran-8290b0106/',
-    github: 'https://github.com/T800-M101/oh-my-portfolio'
+    github: 'https://github.com/T800-M101/oh-my-portfolio',
+    portfolio: 'https://oh-my-portfolio.netlify.app/',
+    work_exp: [
+      {
+        year: '2019 - 2021',
+        company: 'Freelancer',
+        resposabilities: 'Create small web pages with Angular and vanilla Javascript.'
+      },
+      {
+        year: '2021 - 2021',
+        company: 'TGC - Tecnología de Gestion y Comunicación',
+        resposabilities: 'Provide support and development to specialized applications in the public sector, migrating some features from Java to Oracle Apex.'
+      },
+      {
+        year: '2021 - Present',
+        company: '3 Pillar Global',
+        resposabilities: 'Collaborate with international teams and clients to develop scalable software solutions across frontend, backend, and microservices. Improve applications based on business requirements, resolve bugs, and ensure system reliability. Switch seamlessly between Angular, Node.js, NestJS, Python, and Oracle depending on project needs.'
+      }
+    ]
   };
 
   private readonly profile_es = {
     name: 'Guillermo Morán L.',
-    title: 'Ingeniero de Software',
+    title: 'Ing. de Software',
     intro: 'Hago experiencias digitales exepcionales que crean impacto.',
     photo: 'assets/yo_canada.jpg',
     photo_2: 'assets/me.png',
@@ -40,11 +58,29 @@ export class DataService {
     email: 'tuahil@gmail.com',
     phone: '+52 614 303 8485',
     location: 'Chihuahua, México',
-    about: "Soy un desarrollador web apasionado con 6 años de experiencia creando sitios web y aplicaciones web modernos y adaptables. Me especializo en desarrollo front-end, pero también tengo experiencia con tecnologías back-end. Mi enfoque combina conocimientos técnicos con una visión de diseño para ofrecer soluciones funcionales y visualmente atractivas.",
+    about: "Soy un desarrollador web apasionado con 6 años de experiencia creando sitios web y aplicaciones web modernos y adaptables. Soy un desarrollador fullstack. Tengo experiencia con tecnologías frontend y back-end. Mi enfoque combina conocimientos técnicos con una visión de diseño para ofrecer soluciones funcionales y visualmente atractivas.",
     about_2: 'Me gusta contribuir a la creación de un ambiente de trabajo agradable. Creo que el trabajo en equipo es fundamental.',
     experience: '6',
     linkedin: 'https://www.linkedin.com/in/guillermo-moran-8290b0106/',
-    github: 'https://github.com/T800-M101/oh-my-portfolio'
+    github: 'https://github.com/T800-M101/oh-my-portfolio',
+    portfolio: 'https://oh-my-portfolio.netlify.app/',
+    work_exp: [
+      {
+        year: '2019 - 2021',
+        company: 'Freelancer',
+        resposabilities: 'Creando pequeñas páginas web con Angular y Javascript básico.'
+      },
+      {
+        year: '2021 - 2021',
+        company: 'TGC - Tecnología de Gestion y Comunicación',
+        resposabilities: 'Brindar soporte y desarrollo a aplicaciones especializadas en el sector público, migrando algunas funcionalidades de Java a Oracle Apex.'
+      },
+      {
+        year: '2021 - Present',
+        company: '3 Pillar Global',
+        resposabilities: 'Colaboro con equipos y clientes internacionales para desarrollar soluciones de software escalables en frontend, backend y microservicios. Mejoro las aplicaciones según los requisitos del negocio, resuelvo errores y garantizo la fiabilidad del sistema. Trabajo con facilidad entre diferente tecnologias como Angular, Node.js, NestJS, Python y Oracle según las necesidades del proyecto.'
+      }
+    ]
   };
 
   private readonly skills_en = [
@@ -168,7 +204,17 @@ export class DataService {
     rights: 'All rights reserved.',
     portfolio: 'Portfolio',
     dark_mode: 'Dark Mode',
-    light_mode: 'Light Mode'
+    light_mode: 'Light Mode',
+    whatsapp: 'https://wa.me/5216143038485?text=Hi%20there,%20I%20saw%20your%20portfolio%20and%20wanted%20to%20connect',
+    chat: 'Chat with me!',
+    phone_img: 'assets/phone.png',
+    email_img: 'assets/email.png',
+    git_img: 'assets/git.png',
+    portfolio_img: 'assets/portfolio_icon.png',
+    c_education: 'EDUCATION',
+    c_skills: 'PRO. SKILLS',
+    c_profile: 'PROFILE',
+    c_experience: 'WORK EXPERIENCE'
   
   };
   
@@ -203,7 +249,17 @@ export class DataService {
       rights: 'Todos los derechos reservados.',
       portfolio: 'Portafolio',
       dark_mode: 'Modo Oscuro',
-      light_mode: 'Modo Claro'
+      light_mode: 'Modo Claro',
+      whatsapp: 'https://wa.me/5216143038485?text=Hola,%20vi%20tu%20portafolio%20y%20me%20gustaría%20platicar',
+      chat: '¡Hablemos!',
+      phone_img: 'assets/phone.png',
+      email_img: 'assets/email.png',
+      git_img: 'assets/git.png',
+      portfolio_img: 'assets/portfolio_icon.png',
+      c_education: 'EDUCACION',
+      c_skills: 'HABILIDADES',
+      c_profile: 'PERFIL',
+      c_experience: 'EXPERIENCIA LABORAL'
   };
 
   private readonly projects_en = [

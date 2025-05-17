@@ -13,4 +13,12 @@ export interface Profile {
   experience: string;
   linkedin: string;
   github:string;
+  portfolio:string;
+  work_exp: WorkExperience[];
+}
+
+interface WorkExperience {
+  year: string;
+  company: string;
+  resposabilities: string;
 }

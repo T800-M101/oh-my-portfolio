@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, DoCheck, inject } from '@angular/core';
+import { DataService } from '../../core/services/data.service';
 
 @Component({
   selector: 'app-whatsapp',
@@ -7,6 +8,12 @@ import { Component } from '@angular/core';
   templateUrl: './whatsapp.component.html',
   styleUrl: './whatsapp.component.scss'
 })
-export class WhatsappComponent {
-
+export class WhatsappComponent implements DoCheck {
+  private dataService = inject(DataService);
+  
+  templateData = this.dataService.getTemplateData();
+  
+  ngDoCheck(): void {
+    this.templateData = this.dataService.getTemplateData();
+  }
 }

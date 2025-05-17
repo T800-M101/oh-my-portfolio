@@ -30,5 +30,16 @@ export interface Template {
     portfolio: string;
     dark_mode: string;
     light_mode: string;
+    whatsapp: string;
+    chat: string;
+    phone_img: string;
+    email_img: string;
+    git_img: string;
+    portfolio_img: string;
+    c_education: string;
+    c_skills: string;
+    c_profile: string;
+    c_experience: string;
+
   }
   
