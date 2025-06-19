@@ -5,7 +5,7 @@
             @for(project of projects; track project.id) {
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="/assets/ecommerce.jpeg" alt="ecommerce">
+                        <img [src]="project.photo" alt="photo-project">
                     </div>
                     <div class="project-info">
                         <h3>{{project.name}}</h3>

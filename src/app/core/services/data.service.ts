@@ -264,23 +264,26 @@ export class DataService {
 
   private readonly projects_en = [
     {
-      name: 'E-commerce Website', 
-      description: 'A fully responsive e-commerce platform with product filtering, cart functionality, and checkout process.',
+      name: 'Fit-Pro Gym', 
+      description: 'A fully responsive gym platform with bookin classes, register, payments and more.',
       techs: [{name: 'Angular', id: 0}, {name:'Node.js', id: 1}, {name: 'MongoDB', id: 2}],
+      photo: '/assets/fit-pro.png',
       id: 0
     },
 
     {
-      name: 'Task Management App',
-      description: 'A productivity application for managing tasks with drag-and-drop functionality and team collaboration.',
+      name: 'NestJS Backend',
+      description: 'A backend with modules: login, users, classes, instructors, memeberships, etc.',
       techs: [{name: 'Vue.js', id: 0 }, {name: 'Firebase', id: 1}],
+      photo: '/assets/nestjs.png',
       id: 1
     },
 
     {
-      name:'Portfolio Website',
-      description: 'A custom portfolio website with animations and contact form.',
+      name:'Personal Journal',
+      description: 'A simple app to keep record your memories.',
       techs: [{name: 'HTML/CSS', id: 0}, {name: 'JavaScript', id: 1} ],
+      photo: '/assets/journal.png',
       id: 2
     }
   ];
@@ -288,23 +291,26 @@ export class DataService {
 
   private readonly projects_es = [
     {
-      name: 'E-commerce Website', 
-      description: 'Una plataforma de comercio electrónico totalmente interactiva con filtrado de productos, funcionalidad de carrito y proceso de pago.',
+      name: 'Fit-Pro Gym', 
+      description: 'Una plataforma de gimnasio totalmente receptiva con reserva de clases, registro, pagos y más.',
       techs: [{name: 'Angular', id: 0}, {name:'Node.js', id: 1}, {name: 'MongoDB', id: 2}],
+      photo: '/assets/fit-pro.png',
       id: 0
     },
 
     {
-      name: 'Task Management App',
-      description: 'Una aplicación de productividad para gestionar tareas con funcionalidad de arrastrar y soltar y colaboración en equipo.',
+      name: 'NestJS Backend',
+      description: 'Un backend con módulos: login, usuarios, clases, instructores, membresías, etc.',
       techs: [{name: 'Vue.js', id: 0 }, {name: 'Firebase', id: 1}],
+      photo: '/assets/nestjs.png',
       id: 1
     },
 
     {
-      name:'Portfolio Website',
-      description: 'Un sitio web de portafolio personalizado con animaciones y formulario de contacto.',
+      name:'Personal Journal',
+      description: 'Una aplicación sencilla para guardar tus recuerdos.',
       techs: [{name: 'HTML/CSS', id: 0}, {name: 'JavaScript', id: 1} ],
+      photo: '/assets/journal.png',
       id: 2
     }
   ];
