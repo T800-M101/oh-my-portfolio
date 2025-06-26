@@ -40,6 +40,6 @@ export interface Template {
     c_skills: string;
     c_profile: string;
     c_experience: string;
-
+    c_languages: string;
   }
   

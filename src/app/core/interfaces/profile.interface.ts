@@ -8,6 +8,8 @@ export interface Profile {
   email: string;
   phone: string;
   location: string;
+  education: string;
+  bachelorsDegree: string;
   about: string;
   about_2: string;
   experience: string;
@@ -15,6 +17,8 @@ export interface Profile {
   github:string;
   portfolio:string;
   work_exp: WorkExperience[];
+  languages: string;
+  degree: string;
 }
 
 interface WorkExperience {
