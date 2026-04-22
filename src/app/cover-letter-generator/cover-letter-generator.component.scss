@@ -1,0 +1,152 @@
+:host {
+  display: block;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.header-generator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+h3 {
+  color: var(--text-primary, #333);
+  font-size: 1.8rem;
+  font-family: 'Roboto', sans-serif;
+  border-left: 5px solid #ffcc00; /* Color de acento de tu header */
+  padding-left: 15px;
+  margin: 0;
+}
+
+.generator-container {
+  background: var(--bg-card, #ffffff); /* Ajusta según tu tema */
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+input {
+  padding: 12px 16px;
+  border: 2px solid #e1e1e1;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+input:focus {
+  border-color: #ffcc00;
+  box-shadow: 0 0 0 4px rgba(255, 204, 0, 0.1);
+}
+
+button[type="submit"] {
+  background: #ffcc00;
+  color: #000;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+button[type="submit"]:hover:not(:disabled) {
+  background: #e6b800;
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.result-area {
+  margin-top: 2.5rem;
+  animation: fadeIn 0.5s ease-out;
+}
+
+textarea {
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #f9f9f9;
+  font-family: 'Courier New', Courier, monospace; /* Fuente de código para el resultado */
+  font-size: 0.95rem;
+  line-height: 1.6;
+  resize: vertical;
+  color: #444;
+}
+
+.copy-btn, .download-btn {
+  margin-top: 1rem;
+  background: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.lang-toggle {
+  background: transparent;
+  border: 1px solid #ffcc00;
+  color: var(--text-primary, #333);
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.lang-toggle:hover {
+  background: rgba(255, 204, 0, 0.1);
+  transform: scale(1.05);
+}
+
+.lang-toggle i {
+  color: #ffcc00;
+}
+
+
+.actions-wrapper {
+  display: flex;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.download-btn {
+  background: #d32f2f; 
+}
+
+.download-btn:hover {
+  background: #b71c1c;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

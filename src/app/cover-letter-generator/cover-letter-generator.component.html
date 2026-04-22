@@ -1,0 +1,32 @@
+<div class="generator-container">
+  <div class="header-generator">
+    <h3>{{isEnglish ? 'Generate Cover Letter' :'Generar Cover Letter'}}</h3>
+    <button type="button" class="lang-toggle" (click)="toggleLanguage()">
+      <i class="fas fa-language"></i>
+      {{ isEnglish ? 'Switch to Spanish' : 'Cambiar a Inglés' }}
+    </button>
+  </div>
+
+  <form [formGroup]="form" (ngSubmit)="generate()">
+    <input formControlName="recruiterName" [placeholder]="isEnglish ? 'Recruiter Name' : 'Nombre del Reclutador'">
+    <input formControlName="companyName" [placeholder]="isEnglish ? 'Company' : 'Empresa'">
+    <input formControlName="projectName" [placeholder]="isEnglish ? 'Position / Project' : 'Nombre del Proyecto / Puesto'">
+
+    <button type="submit" [disabled]="form.invalid">
+      {{ isEnglish ? 'Generate Cover Letter' : 'Generar Cover Letter' }}
+    </button>
+  </form>
+
+  <div *ngIf="generatedLetter" class="result-area">
+    <textarea readonly [value]="generatedLetter" rows="12"></textarea>
+    <div class="actions-wrapper">
+      <button class="copy-btn" (click)="copyToClipboard()">
+        <i class="fas fa-copy"></i> {{ isEnglish ? 'Copy to Clipboard' : 'Copiar al Portapapeles' }}
+      </button>
+      <button class="download-btn" (click)="downloadPDF()">
+        <i class="fas fa-file-pdf"></i> {{ isEnglish ? 'Download PDF' : 'Descargar PDF' }}
+      </button>
+
+    </div>
+  </div>
+</div>
