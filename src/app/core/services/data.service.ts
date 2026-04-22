@@ -93,16 +93,16 @@ export class DataService {
 
   private readonly skills_en = [
     { name: 'HTML5',
-      description: 'Semantic markap, accessibility, SEO optimization', 
-      id: 0 
+      description: 'Semantic markap, accessibility, SEO optimization',
+      id: 0
     },
     { name: 'CSS3',
       description: 'Responsive design, animations, Flexbox/Grid',
-      id: 1 
+      id: 1
     },
     { name: 'JavaScript',
       description: 'ES6+, DOM manipulation, async programming',
-      id: 2 
+      id: 2
     },
     {
       name: 'Angular',
@@ -111,7 +111,7 @@ export class DataService {
     },
     {
       name: 'Node JS',
-      description: 'Server-side Javascript, REST API´s, Express, functional programming', 
+      description: 'Server-side Javascript, REST API´s, Express, functional programming',
       id: 4
     },
     {
@@ -135,7 +135,7 @@ export class DataService {
       id: 8
     },
     { name: 'Databases',
-      description: 'MongoDB, SQL', 
+      description: 'MongoDB, SQL',
       id: 9
     },
   ];
@@ -143,16 +143,16 @@ export class DataService {
 
   private readonly skills_es = [
     { name: 'HTML5',
-      description: 'Marcado semántico, accesibilidad y optimización SEO', 
+      description: 'Marcado semántico, accesibilidad y optimización SEO',
       id: 0
     },
     { name: 'CSS3',
       description: 'Diseño responsivo, animaciones, Flexbox/Grid',
-      id: 1 
+      id: 1
     },
     { name: 'JavaScript',
       description: 'ES6+, Manipulación DOM, programación asíncrona',
-      id: 2 
+      id: 2
     },
     {
       name: 'Angular',
@@ -186,8 +186,8 @@ export class DataService {
 
     },
     { name: 'Bases de datos',
-      description: 'MongoDB, SQL', 
-      id: 9 
+      description: 'MongoDB, SQL',
+      id: 9
     }
   ];
 
@@ -206,7 +206,7 @@ export class DataService {
     experience: 'Experience',
     location: 'Location',
     years: 'years',
-    pdf: 'Generate CV PDF',
+    pdf: 'Download CV PDF',
     my_skills: 'My Skills',
     my_projects: 'My Projects',
     live_demo: 'Live Demo',
@@ -235,9 +235,9 @@ export class DataService {
     c_experience: 'WORK EXPERIENCE',
     c_languages: 'LANGUAGES'
 
-  
+
   };
-  
+
   private readonly template_es = {
       greeting: 'Hola, Soy',
       view_work: 'Ve mi trabajo',
@@ -253,7 +253,7 @@ export class DataService {
       experience: 'Experiencia',
       location: 'Ubicación',
       years: 'años',
-      pdf: 'Genera CV PDF',
+      pdf: 'Descargar CV PDF',
       my_skills: 'Mis habilidades',
       my_projects: 'Mis Proyectos',
       live_demo: 'Demo',
@@ -285,7 +285,7 @@ export class DataService {
 
   private readonly projects_en = [
     {
-      name: 'Fit-Pro Gym', 
+      name: 'Fit-Pro Gym (Under Construction)',
       description: 'A fully responsive gym platform with bookin classes, register, payments and more.',
       techs: [{name: 'Angular', id: 0}, {name:'Node.js', id: 1}, {name: 'MongoDB', id: 2}],
       photo: '/assets/fit-pro.png',
@@ -293,7 +293,7 @@ export class DataService {
     },
 
     {
-      name: 'NestJS Backend',
+      name: 'NestJS Backend (Under Construction)',
       description: 'A backend with modules: login, users, classes, instructors, memeberships, etc.',
       techs: [{name: 'Vue.js', id: 0 }, {name: 'Firebase', id: 1}],
       photo: '/assets/nestjs.png',
@@ -301,18 +301,18 @@ export class DataService {
     },
 
     {
-      name:'Personal Journal',
+      name:'Personal Journal (Under Construction)',
       description: 'A simple app to keep record your memories.',
       techs: [{name: 'HTML/CSS', id: 0}, {name: 'JavaScript', id: 1} ],
       photo: '/assets/journal.png',
       id: 2
     }
   ];
-  
+
 
   private readonly projects_es = [
     {
-      name: 'Fit-Pro Gym', 
+      name: 'Fit-Pro Gym (En Desarrollo)',
       description: 'Una plataforma de gimnasio totalmente receptiva con reserva de clases, registro, pagos y más.',
       techs: [{name: 'Angular', id: 0}, {name:'Node.js', id: 1}, {name: 'MongoDB', id: 2}],
       photo: '/assets/fit-pro.png',
@@ -320,7 +320,7 @@ export class DataService {
     },
 
     {
-      name: 'NestJS Backend',
+      name: 'NestJS Backend (En Desarrollo)',
       description: 'Un backend con módulos: login, usuarios, clases, instructores, membresías, etc.',
       techs: [{name: 'Vue.js', id: 0 }, {name: 'Firebase', id: 1}],
       photo: '/assets/nestjs.png',
@@ -328,14 +328,14 @@ export class DataService {
     },
 
     {
-      name:'Personal Journal',
+      name:'Personal Journal (En Desarrollo)',
       description: 'Una aplicación sencilla para guardar tus recuerdos.',
       techs: [{name: 'HTML/CSS', id: 0}, {name: 'JavaScript', id: 1} ],
       photo: '/assets/journal.png',
       id: 2
     }
   ];
-  
+
 
   getProfile(): Profile {
     return this.languageService.getCurrentLanguage() === 'es' ? this.profile_es : this.profile_en;
@@ -352,5 +352,5 @@ export class DataService {
   getProjects(): Project[] {
     return this.languageService.getCurrentLanguage() === 'es' ? this.projects_es : this.projects_en;
   }
- 
+
 }
