@@ -4,9 +4,11 @@ export interface Tech {
 }
 
 export interface Project {
+  id: number;
   name: string;
   description: string;
   techs: Tech[];
   photo: string;
-  id: number;
+  demo: string;
+  code: string;
 }

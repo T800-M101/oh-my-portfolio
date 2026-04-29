@@ -16,9 +16,9 @@ export class DataService {
     name: 'Guillermo Morán L.',
     title: 'Software Engineer',
     intro: 'I build exceptional digital experiences that make an impact.',
-    photo: 'assets/yo_canada.jpg',
-    photo_2: 'assets/me.png',
-    photo_3: 'assets/me-round.png',
+    photo: 'assets/yo_canada.webp',
+    photo_2: 'assets/me.webp',
+    photo_3: 'assets/me-round.webp',
     email: 'tuahil@gmail.com',
     phone: '+52 614 303 8485',
     location: 'Chihuahua, México',
@@ -56,9 +56,9 @@ export class DataService {
     name: 'Guillermo Morán L.',
     title: 'Ing. de Software',
     intro: 'Hago experiencias digitales exepcionales que crean impacto.',
-    photo: 'assets/yo_canada.jpg',
-    photo_2: 'assets/me.png',
-    photo_3: 'assets/me-round.png',
+    photo: 'assets/yo_canada.webp',
+    photo_2: 'assets/me.webp',
+    photo_3: 'assets/me-round.webp',
     email: 'tuahil@gmail.com',
     phone: '+52 614 303 8485',
     location: 'Chihuahua, México',
@@ -285,54 +285,65 @@ export class DataService {
 
   private readonly projects_en = [
     {
-      name: 'Fit-Pro Gym (Under Construction)',
-      description: 'A fully responsive gym platform with bookin classes, register, payments and more.',
-      techs: [{name: 'Angular', id: 0}, {name:'Node.js', id: 1}, {name: 'MongoDB', id: 2}],
-      photo: '/assets/fit-pro.png',
-      id: 0
+      id: 0,
+      name: 'Technical Challenges',
+      description: 'Collection of technical challenges solved with Angular. Each one shows the problem, the solution, and the design decisions.',
+      techs: [{name: 'Angular Forms', id: 0}, {name:'RXJS', id: 1}, {name:'Tailwind', id: 2}],
+      photo: '/assets/tech-challenges.webp',
+      demo: 'https://69f0b513cd5f13913bacb52b--technical-challenges.netlify.app/',
+      code: 'https://github.com/T800-M101/Technical-Challenges'
     },
-
     {
+      id: 1,
       name: 'NestJS Backend (Under Construction)',
       description: 'A backend with modules: login, users, classes, instructors, memeberships, etc.',
       techs: [{name: 'Vue.js', id: 0 }, {name: 'Firebase', id: 1}],
       photo: '/assets/nestjs.png',
-      id: 1
+      demo:'',
+      code:''
     },
 
     {
+      id: 2,
       name:'Personal Journal (Under Construction)',
       description: 'A simple app to keep record your memories.',
       techs: [{name: 'HTML/CSS', id: 0}, {name: 'JavaScript', id: 1} ],
       photo: '/assets/journal.png',
-      id: 2
+      demo:'',
+      code:''
     }
   ];
 
 
   private readonly projects_es = [
     {
-      name: 'Fit-Pro Gym (En Desarrollo)',
-      description: 'Una plataforma de gimnasio totalmente receptiva con reserva de clases, registro, pagos y más.',
-      techs: [{name: 'Angular', id: 0}, {name:'Node.js', id: 1}, {name: 'MongoDB', id: 2}],
-      photo: '/assets/fit-pro.png',
-      id: 0
+      id: 0,
+      name: 'Desafíos Técnicos',
+      description: 'Recopilación de desafíos técnicos resueltos con Angular. Cada uno muestra el problema, la solución y las decisiones de diseño.',
+      techs: [{name: 'Angular Forms', id: 0}, {name:'RXJS', id: 1}, {name:'Tailwind', id: 2}],
+      photo: '/assets/tech-challenges.webp',
+      demo: 'https://69f0b513cd5f13913bacb52b--technical-challenges.netlify.app/',
+      code: 'https://github.com/T800-M101/Technical-Challenges'
     },
 
     {
+      id: 1,
       name: 'NestJS Backend (En Desarrollo)',
       description: 'Un backend con módulos: login, usuarios, clases, instructores, membresías, etc.',
       techs: [{name: 'Vue.js', id: 0 }, {name: 'Firebase', id: 1}],
       photo: '/assets/nestjs.png',
-      id: 1
+      demo:'',
+      code:''
     },
 
     {
+      id: 2,
       name:'Personal Journal (En Desarrollo)',
       description: 'Una aplicación sencilla para guardar tus recuerdos.',
       techs: [{name: 'HTML/CSS', id: 0}, {name: 'JavaScript', id: 1} ],
       photo: '/assets/journal.png',
-      id: 2
+      demo:'',
+      code:''
     }
   ];
 

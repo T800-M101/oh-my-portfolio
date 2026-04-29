@@ -4,28 +4,31 @@
         <div class="projects-grid">
             @for(project of projects; track project.id) {
                 <div class="project-card">
-                    <div class="project-image">
+                    <div class="project-image-wrapper">
                         <img [src]="project.photo" alt="photo-project">
                     </div>
-                    <div class="project-info">
-                        <h3>{{project.name}}</h3>
-                        <p>{{project.description}}</p>
-                      
-                        <div class="project-footer">
-                          <div class="project-tech">
-                            @for(tech of project.techs; track tech.id) {
-                              <span>{{tech.name}}</span>
-                            }
-                          </div>
-                          <div class="project-links">
-                            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i>{{templateData.live_demo}}</a>
-                            <a href="#" target="_blank"><i class="fab fa-github"></i> {{templateData.code}}</a>
-                          </div>
+
+                    <div class="project-overlay">
+                        <div class="overlay-content">
+                            <h3>{{project.name}}</h3>
+                            <p>{{project.description}}</p>
+
+                            <div class="project-tech">
+                                @for(tech of project.techs; track tech.id) {
+                                    <span>{{tech.name}}</span>
+                                }
+                            </div>
                         </div>
-                      </div>
-                      
+
+                        <div class="project-links">
+                            <a [href]="project.demo" target="_blank"><i class="fas fa-external-link-alt"></i>{{templateData.live_demo}}</a>
+                            <a [href]="project.code" target="_blank"><i class="fab fa-github"></i> {{templateData.code}}</a>
+                        </div>
+                    </div>
                 </div>
             }
         </div>
     </div>
 </section>
+
+
