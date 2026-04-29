@@ -290,7 +290,7 @@ export class DataService {
       description: 'Collection of technical challenges solved with Angular. Each one shows the problem, the solution, and the design decisions.',
       techs: [{name: 'Angular Forms', id: 0}, {name:'RXJS', id: 1}, {name:'Tailwind', id: 2}],
       photo: '/assets/tech-challenges.webp',
-      demo: 'https://69f0b513cd5f13913bacb52b--technical-challenges.netlify.app/',
+      demo: 'https://technical-challenges.netlify.app/',
       code: 'https://github.com/T800-M101/Technical-Challenges'
     },
     {
@@ -322,7 +322,7 @@ export class DataService {
       description: 'Recopilación de desafíos técnicos resueltos con Angular. Cada uno muestra el problema, la solución y las decisiones de diseño.',
       techs: [{name: 'Angular Forms', id: 0}, {name:'RXJS', id: 1}, {name:'Tailwind', id: 2}],
       photo: '/assets/tech-challenges.webp',
-      demo: 'https://69f0b513cd5f13913bacb52b--technical-challenges.netlify.app/',
+      demo: 'https://technical-challenges.netlify.app/',
       code: 'https://github.com/T800-M101/Technical-Challenges'
     },
 
