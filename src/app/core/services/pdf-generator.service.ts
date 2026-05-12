@@ -66,7 +66,7 @@ async generatePDF(profile: Profile, skills: Skill[], template: any) {
   doc.setFontSize(12);
   doc.text(capitalize(template.c_experience), leftMargin, currentY);
   currentY += 10;
-  
+
   // WORK EXPERIENCE ITEMS
   profile.work_exp.forEach((exp) => {
   const content = `${exp.year} | ${exp.company}\n${exp.resposabilities.replace(/<br>/g, '\n')}`;
@@ -77,11 +77,11 @@ async generatePDF(profile: Profile, skills: Skill[], template: any) {
   doc.setFont('helvetica', 'bold');
   doc.text(`${exp.year} | ${exp.company}`, leftMargin, currentY);
   currentY += 6;
-  
+
   doc.setFont('helvetica', 'normal');
   doc.text(lines.slice(1), leftMargin, currentY);
   currentY += (lines.length - 1) * 6 + 10;
-  checkForNewPage(requiredSpace); 
+  checkForNewPage(requiredSpace);
 });
 
 
@@ -91,7 +91,7 @@ async generatePDF(profile: Profile, skills: Skill[], template: any) {
   doc.setFontSize(12);
   doc.text(capitalize(template.c_education), leftMargin, currentY);
   currentY += 10;
-  
+
   doc.setTextColor(0, 0, 0);
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(10);

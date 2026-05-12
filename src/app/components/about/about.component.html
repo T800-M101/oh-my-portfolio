@@ -1,29 +1,70 @@
 <section id="about" class="about">
-    <div class="container">
-        <h2 class="section-title">{{templateData.about_me}}</h2>
-        <div class="about-content">
-            <div class="about-image">
-                <img id="profile-pic" src="{{profile.photo_2}}" alt="About Me">
-            </div>
-            <div class="about-text">
-                <p>{{profile.about}}</p>
-                <p>{{profile.about_2}}</p>
-                <div class="personal-info">
-                    <div>
-                        <span>{{templateData.name}}:</span> {{profile.name}}
-                    </div>
-                    <div>
-                        <span>{{templateData.email}}:</span> {{profile.email}}
-                    </div>
-                    <div>
-                        <span>{{templateData.experience}}:</span> {{profile.experience}} {{templateData.years}}
-                    </div>
-                    <div>
-                        <span>{{templateData.location}}:</span> {{profile.location}}
-                    </div>
-                </div>
-                <a id="generate-cv" class="btn" href="assets/Guillermo_Moran_CV.pdf" target="_blank" download="Guillermo_Moran_CV.pdf">{{templateData.pdf}}</a>
-            </div>
-        </div>
+  <div class="container">
+
+    <div class="about-header">
+      <p class="about-eyebrow">{{ about().about_me}}</p>
+      <h2 class="section-title">
+        {{about().headline}}
+      </h2>
+      <div class="about-divider"></div>
     </div>
+
+    <!-- Narrativa: sin foto, sin datos, solo historia -->
+    <div class="about-story">
+      <p>{{ about().story }}</p>
+
+      <p class="quote">
+        <i class="fas fa-quote-left"></i>
+        {{ about().quote }}
+        <i class="fas fa-quote-right"></i>
+      </p>
+
+      <p>{{ about().story_2 }}</p>
+    </div>
+
+    <!-- Timeline de carrera -->
+    <div class="about-journey">
+      <span class="block-label">{{'Professional journey' }}</span>
+      <div class="timeline">
+        @for (item of about().timeline; track item.year) {
+        <div class="tl-item">
+          <span class="tl-year">{{ item.year }}</span>
+          <div class="tl-right">
+            <div class="tl-dot"></div>
+            <p class="tl-role">{{ item.role }}</p>
+            <p class="tl-place">{{ item.company }}</p>
+            <p class="tl-note">{{ item.note }}</p>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+
+    <!-- Value cards -->
+    <div class="about-values">
+      <span class="block-label">{{ about().my_value }}</span>
+      <div class="values-grid">
+        @for (value of about().values; track value.title) {
+        <div class="value-card">
+          <i class="{{ value.icon }}" aria-hidden="true"></i>
+          <p class="value-title">{{ value.title }}</p>
+          <p class="value-desc">{{ value.desc }}</p>
+        </div>
+        }
+      </div>
+    </div>
+
+    <!-- Contact strip + CV -->
+    <div class="about-footer">
+      <div class="about-meta">
+        <span><i class="fas fa-envelope"></i> {{ about().email }}</span>
+        <span><i class="fas fa-map-marker-alt"></i> {{ about().location }}</span>
+      </div>
+      <a class="btn" href="assets/Guillermo_Moran_CV.pdf" target="_blank" download="Guillermo_Moran_CV.pdf">
+        <i class="fas fa-download"></i>
+        {{ about().pdf_btn }}
+      </a>
+    </div>
+
+  </div>
 </section>

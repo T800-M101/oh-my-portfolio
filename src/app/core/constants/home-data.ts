@@ -1,4 +1,5 @@
-const yearsOfExperience = new Date().getFullYear() - 2020;
+import { EXPERIENCE } from "../years-of-experience";
+
 export const HOME_DATA = {
   en: {
     hi: "Hi, I'm",
@@ -13,7 +14,7 @@ export const HOME_DATA = {
     photo: 'assets/yo_canada.webp',
     open_to_work: 'Open to work',
     stats: [
-      { value: `${yearsOfExperience}+`, label: 'Years exp.' },
+      { value: `${EXPERIENCE}+`, label: 'Years exp.' },
       { value: '10+', label: 'Projects shipped' },
       { value: '100%', label: 'Remote ready' },
     ],
@@ -41,7 +42,7 @@ export const HOME_DATA = {
     photo: 'assets/yo_canada.webp',
     open_to_work: 'Abierto a nuevas oportunidades',
     stats: [
-      { value: `${yearsOfExperience}+`, label: 'Años de exp.' },
+      { value: `${EXPERIENCE}+`, label: 'Años de exp.' },
       { value: '10+', label: 'Proyectos entregados' },
       { value: '100%', label: 'Listo para remoto' },
     ],

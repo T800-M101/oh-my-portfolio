@@ -20,7 +20,7 @@ export class LanguageSwitcherComponent {
 
   private languageService = inject(LanguageService);
 
-  
+
   toggleLanguage(event: Event) {
     const isChecked = (event.target as HTMLInputElement).checked;
     this.currentLanguage = isChecked ? 'es' : 'en';

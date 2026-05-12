@@ -1,43 +1,43 @@
 <section id="contact" class="contact">
     <div class="container">
-        <h2 class="section-title">{{templateData.get_in_touch}}</h2>
+        <h2 class="section-title">{{template().get_in_touch}}</h2>
         <div class="contact-content">
             <div class="contact-info">
-                <h3>{{templateData.lets_talk}}</h3>
-                <p>{{templateData.contact_msg}}</p>
+                <h3>{{template().lets_talk}}</h3>
+                <p>{{template().contact_msg}}</p>
                 <div class="contact-details">
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <a [href]="'mailto:' + profile.email">{{profile.email}}</a>
+                        <a [href]="'mailto:' + profile().email">{{profile().email}}</a>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
-                        <a [href]="'tel:' + profile.phone">{{ profile.phone }}</a>
+                        <a [href]="'tel:' + profile().phone">{{ profile().phone }}</a>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>{{profile.location}}</span>
+                        <span>{{profile().location}}</span>
                     </div>
                 </div>
                 <div class="social-links">
-                    <a [href]="profile.github" target="_blank"><i class="fab fa-github"></i></a>
-                    <a [href]="profile.linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a [href]="profile().github" target="_blank"><i class="fab fa-github"></i></a>
+                    <a [href]="profile().linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
             <form [formGroup]="contactForm" class="contact-form" (ngSubmit)="onSubmit()">
                 <div class="form-group">
-                    <input type="text" formControlName="name" placeholder="{{templateData.placeholder_name}}" required>
+                    <input type="text" formControlName="name" placeholder="{{template().placeholder_name}}" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" formControlName="email" placeholder="{{templateData.placeholder_email}}" required>
+                    <input type="email" formControlName="email" placeholder="{{template().placeholder_email}}" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" formControlName="subject" placeholder="{{templateData.placeholder_subject}}">
+                    <input type="text" formControlName="subject" placeholder="{{template().placeholder_subject}}">
                 </div>
                 <div class="form-group">
-                    <textarea placeholder="{{templateData.placeholder_msg}}" formControlName="message" required></textarea>
+                    <textarea placeholder="{{template().placeholder_msg}}" formControlName="message" required></textarea>
                 </div>
-                <button type="submit" class="btn">{{templateData.send_msg}}</button>
+                <button type="submit" class="btn">{{template().send_msg}}</button>
             </form>
         </div>
     </div>

@@ -1,38 +1,309 @@
-/* About Section */
-.about-content {
-    display: flex;
-    align-items: center;
-    gap: 50px;
+/* =============================================
+   About Section 
+   ============================================= */
+
+
+/* Header */
+.about-header {
+  text-align: center;
+  margin-bottom: 3rem;
 }
 
-.about-image {
-    flex: 1;
+.about-eyebrow {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
 }
 
-.about-image img {
-    border-radius: 10px;
-    box-shadow: var(--box-shadow);
+.section-title .highlight-blue {
+  color: var(--primary-color, #3498db);
 }
 
-.about-text {
-    flex: 1;
+.about-header .section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--dark-color);
+  margin-bottom: 0.75rem;
 }
 
-.about-text p {
-    margin-bottom: 20px;
+.about-header .section-title span {
+  color: var(--primary-color);
 }
 
-.personal-info {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    margin: 30px 0;
-    width: 105%;
+.about-divider {
+  width: 52px;
+  height: 4px;
+  background-color: var(--primary-color);
+  border-radius: 2px;
+  margin: 0 auto;
 }
 
-.personal-info div span {
-    font-weight: 600;
-    color: var(--dark-color);
+/* Story */
+.about-story {
+  max-width: 900px;
+  margin: 0 auto 3rem;
 }
 
-/* End About Section */
+.about-story p {
+  font-size: 1rem;
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+
+.about-quote {
+  border-left: 4px solid var(--primary-color);
+  padding: 0.85rem 1.25rem;
+  margin: 1.5rem 0;
+  background-color: rgba(52, 152, 219, 0.05);
+  border-radius: 0 5px 5px 0;
+}
+
+.quote {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  font-style: italic;
+  padding: 20px 30px;
+  background: rgba(52, 152, 219, 0.05);
+  border-left: 4px solid var(--primary-color);
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.quote i {
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  margin: 0 8px;
+  opacity: 0.7;
+}
+
+/* Block label (shared by journey + values) */
+.block-label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--text-light);
+  margin-bottom: 1.25rem;
+}
+
+/* Journey / Timeline */
+.about-journey {
+  max-width: 720px;
+  margin: 0 auto 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.dark-mode .about-journey {
+  border-top-color: rgba(255, 255, 255, 0.07);
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.tl-item {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 0 16px;
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
+.tl-item:last-child {
+  padding-bottom: 0;
+}
+
+.tl-year {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-align: right;
+  padding-top: 2px;
+  white-space: nowrap;
+}
+
+.tl-right {
+  border-left: 2px solid rgba(0, 0, 0, 0.1);
+  padding-left: 18px;
+  padding-bottom: 0;
+}
+
+.dark-mode .tl-right {
+  border-left-color: rgba(255, 255, 255, 0.1);
+}
+
+.tl-item:last-child .tl-right {
+  border-left-color: transparent;
+}
+
+.tl-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  border: 2px solid var(--white);
+  position: absolute;
+  left: calc(56px + 11px);
+  top: 3px;
+  transform: translateX(-50%);
+}
+
+.tl-role {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 2px;
+}
+
+.tl-place {
+  font-size: 0.82rem;
+  color: var(--primary-color);
+  margin-bottom: 4px;
+}
+
+.tl-note {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Values grid */
+.about-values {
+  max-width: 720px;
+  margin: 0 auto 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.dark-mode .about-values {
+  border-top-color: rgba(255, 255, 255, 0.07);
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.value-card {
+  background-color: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 10px;
+  padding: 1.25rem;
+  transition: var(--transition);
+}
+
+.dark-mode .value-card {
+  border-color: rgba(255, 255, 255, 0.07);
+}
+
+.value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--box-shadow);
+}
+
+.value-card i {
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.value-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 0.35rem;
+}
+
+.value-desc {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Footer strip */
+.about-footer {
+  max-width: 720px;
+  margin: 0 auto 0;
+  padding-top: 1.75rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.dark-mode .about-footer {
+  border-top-color: rgba(255, 255, 255, 0.07);
+}
+
+.about-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.about-meta span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.88rem;
+  color: var(--text-light);
+}
+
+.about-meta i {
+  color: var(--primary-color);
+  font-size: 0.9rem;
+}
+
+/* =============================================
+   About — Responsive
+   ============================================= */
+
+@media (max-width: 768px) {
+  .about-header .section-title {
+    font-size: 2rem;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .about-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .about-meta {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .tl-item {
+    grid-template-columns: 44px 1fr;
+  }
+
+  .tl-dot {
+    left: calc(44px + 11px);
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+}

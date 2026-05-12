@@ -1,8 +1,8 @@
 <section id="skills" class="skills">
     <div class="container">
-        <h2 class="section-title">{{templateData.my_skills}}</h2>
+        <h2 class="section-title">{{template().my_skills}}</h2>
         <div class="skills-grid">
-            @for(skill of skills; track skill.id){
+            @for(skill of skills(); track skill.id){
                 <div class="skill-item">
                     <div class="skill-icon">
                         <i class="fab fa-html5"></i>

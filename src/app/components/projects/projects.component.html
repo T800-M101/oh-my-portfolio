@@ -1,8 +1,8 @@
 <section id="projects" class="projects">
     <div class="container">
-        <h2 class="section-title">{{templateData.my_projects}}</h2>
+        <h2 class="section-title">{{template().my_projects}}</h2>
         <div class="projects-grid">
-            @for(project of projects; track project.id) {
+            @for(project of projects(); track project.id) {
                 <div class="project-card">
                     <div class="project-image-wrapper">
                         <img [src]="project.photo" alt="photo-project">
@@ -21,8 +21,8 @@
                         </div>
 
                         <div class="project-links">
-                            <a [href]="project.demo" target="_blank"><i class="fas fa-external-link-alt"></i>{{templateData.live_demo}}</a>
-                            <a [href]="project.code" target="_blank"><i class="fab fa-github"></i> {{templateData.code}}</a>
+                            <a [href]="project.demo" target="_blank"><i class="fas fa-external-link-alt"></i>{{template().live_demo}}</a>
+                            <a [href]="project.code" target="_blank"><i class="fab fa-github"></i> {{template().code}}</a>
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, DoCheck, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -8,8 +8,6 @@ import {
 } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { DataService } from '../../core/services/data.service';
-import { Profile } from '../../core/interfaces/profile.interface';
-import { Template } from '../../core/interfaces/template.interface';
 
 @Component({
   selector: 'app-contact',
@@ -18,18 +16,12 @@ import { Template } from '../../core/interfaces/template.interface';
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
-export class ContactComponent implements DoCheck {
+export class ContactComponent {
   private dataService = inject(DataService);
   contactForm: FormGroup;
-  
-  profile: Profile = this.dataService.getProfile();
-  templateData: Template = this.dataService.getTemplateData();
-  
-  
-  ngDoCheck(): void {
-    this.profile = this.dataService.getProfile();
-    this.templateData = this.dataService.getTemplateData();
-  }
+
+  readonly profile = this.dataService.profile;
+  readonly template = this.dataService.template;
 
   constructor(
     private fb: FormBuilder,
@@ -43,7 +35,7 @@ export class ContactComponent implements DoCheck {
       message: ['', Validators.required],
     });
   }
-  
+
 
   async onSubmit() {
     if (this.contactForm.invalid) return;

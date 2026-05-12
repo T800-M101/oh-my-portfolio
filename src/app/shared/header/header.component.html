@@ -2,11 +2,11 @@
   <div class="container">
     <nav>
       <ul [ngClass]="{ 'active': menuOpen, 'dark': themeService.getIsDark() }">
-        <li><a routerLink="/" fragment="home" (click)="closeMenu()">{{templateData.home}}</a></li>
-        <li><a routerLink="/" fragment="about" (click)="closeMenu()">{{templateData.about}}</a></li>
-        <li><a routerLink="/" fragment="skills" (click)="closeMenu()">{{templateData.skills}}</a></li>
-        <li><a routerLink="/" fragment="projects" (click)="closeMenu()">{{templateData.projects}}</a></li>
-        <li><a routerLink="/" fragment="contact" (click)="closeMenu()">{{templateData.contact}}</a></li>
+        <li><a routerLink="/" fragment="home" (click)="closeMenu()">{{template().home}}</a></li>
+        <li><a routerLink="/" fragment="about" (click)="closeMenu()">{{template().about}}</a></li>
+        <li><a routerLink="/" fragment="skills" (click)="closeMenu()">{{template().skills}}</a></li>
+        <li><a routerLink="/" fragment="projects" (click)="closeMenu()">{{template().projects}}</a></li>
+        <li><a routerLink="/" fragment="contact" (click)="closeMenu()">{{template().contact}}</a></li>
       </ul>
       <div class="menu-toggle" (click)="toggleMenu()">
         <i class="fas" [class.fa-bars]="!menuOpen" [class.fa-times]="menuOpen"></i>

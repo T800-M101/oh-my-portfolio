@@ -3,14 +3,14 @@
         <div class="footer-content">
             <div class="footer-logo">{{profile.name}}</div>
             <div class="footer-links">
-                <a href="#home">{{templateData.home}}</a>
-                <a href="#about">{{templateData.about}}</a>
-                <a href="#skills">{{templateData.skills}}</a>
-                <a href="#projects">{{templateData.projects}}</a>
-                <a href="#contact">{{templateData.contact}}</a>
+                <a href="#home">{{template().home}}</a>
+                <a href="#about">{{template().about}}</a>
+                <a href="#skills">{{template().skills}}</a>
+                <a href="#projects">{{template().projects}}</a>
+                <a href="#contact">{{template().contact}}</a>
             </div>
             <div class="footer-copyright">
-                &copy; {{ currentYear }} {{profile.name}} {{templateData.rights}}
+                &copy; {{ currentYear }} {{profile.name}} {{template().rights}}
             </div>
         </div>
     </div>

@@ -1,7 +1,5 @@
-import { Component, DoCheck, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { DataService } from '../../core/services/data.service';
-import { Profile } from '../../core/interfaces/profile.interface';
-import { Template } from '../../core/interfaces/template.interface';
 
 @Component({
   selector: 'app-footer',
@@ -10,16 +8,12 @@ import { Template } from '../../core/interfaces/template.interface';
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss'
 })
-export class FooterComponent implements DoCheck {
+export class FooterComponent  {
   currentYear: number = new Date().getFullYear();
-  
+
   private dataService = inject(DataService);
 
-  profile: Profile = this.dataService.getProfile();
-  templateData: Template = this.dataService.getTemplateData();
-  
-  ngDoCheck(): void {
-    this.profile = this.dataService.getProfile();
-    this.templateData = this.dataService.getTemplateData();
-  }
+  readonly profile = this.dataService.profile();
+  readonly template = this.dataService.template;
+
 }
