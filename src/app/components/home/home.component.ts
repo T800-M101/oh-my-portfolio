@@ -1,9 +1,15 @@
-import { Component, DoCheck, inject, OnInit } from '@angular/core';
+import {
+  Component,
+  computed,
+  HostListener,
+  inject,
+  OnDestroy,
+  OnInit,
+  signal,
+} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { filter } from 'rxjs';
 import { DataService } from '../../core/services/data.service';
-import { Profile } from '../../core/interfaces/profile.interface';
-import { Template } from '../../core/interfaces/template.interface';
 
 @Component({
   selector: 'app-home',
@@ -12,34 +18,63 @@ import { Template } from '../../core/interfaces/template.interface';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent implements OnInit, DoCheck {
+export class HomeComponent implements OnInit, OnDestroy {
   private dataService = inject(DataService);
   private route = inject(ActivatedRoute);
 
+  readonly home = this.dataService.home;
 
-  profile: Profile = this.dataService.getProfile();
-  templateData: Template = this.dataService.getTemplateData();
+  isMobile = signal(false);
 
-  ngDoCheck(): void {
-    this.profile = this.dataService.getProfile();
-    this.templateData = this.dataService.getTemplateData();
+  private readonly skillTags = [
+    'Angular + Signals',
+    'RxJS & TypeScript',
+    'Scalable UI Architecture',
+    'Clean Code',
+  ];
+
+  private skillIndex = signal(0);
+  currentSkill = computed(() => this.skillTags[this.skillIndex()]);
+
+  private intervalId?: ReturnType<typeof setInterval>;
+
+  @HostListener('window:resize')
+  onResize() {
+    this.checkScreenSize();
   }
-  
+
   ngOnInit() {
-    this.route.fragment
-      .pipe(filter((fragment) => !!fragment))
-      .subscribe((fragment) => {
-        this.scrollToFragment(fragment!);
-      });
+    this.checkScreenSize();
+
+    this.rotateSkills();
+
+    this.route.fragment.pipe(filter((f) => !!f)).subscribe((fragment) => {
+      this.scrollToFragment(fragment!);
+    });
   }
 
-  scrollToFragment(fragment: string) {
-    setTimeout(() => {
-      // Ensures DOM is ready
+  ngOnDestroy(): void {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
+  }
+
+  private checkScreenSize(): void {
+    this.isMobile.set(window.innerWidth <= 768);
+  }
+
+  private scrollToFragment(fragment: string) {
+    requestAnimationFrame(() => {
       const element = document.getElementById(fragment);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     });
+  }
+
+  private rotateSkills(): void {
+    this.intervalId = setInterval(() => {
+      this.skillIndex.update((i) => (i + 1) % this.skillTags.length);
+    }, 2500);
   }
 }

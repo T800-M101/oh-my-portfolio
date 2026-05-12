@@ -1,9 +1,10 @@
-import { inject, Injectable } from '@angular/core';
+import { computed, inject, Injectable } from '@angular/core';
 import { Profile } from '../interfaces/profile.interface';
 import { Skill } from '../interfaces/skill.interface';
 import { LanguageService } from './language.service';
 import { Template } from '../interfaces/template.interface';
 import { Project } from '../interfaces/project.interface';
+import { HOME_DATA } from '../constants/home-data';
 
 @Injectable({
   providedIn: 'root',
@@ -54,6 +55,11 @@ export class DataService {
     ],
     languages: 'spanish - english',
     degree: 'Bachelor’s Degree',
+    stats: [
+   { value: '8+', label: 'Years exp.' },
+   { value: '20+', label: 'Projects shipped' },
+   { value: '100%', label: 'Remote ready' }
+ ]
   };
 
   private readonly profile_es = {
@@ -99,6 +105,18 @@ export class DataService {
     ],
     languages: 'español - inglés',
     degree: 'Licenciatura',
+    stats: [
+   { value: '8+', label: 'Years exp.' },
+   { value: '20+', label: 'Projects shipped' },
+   { value: '100%', label: 'Remote ready' }
+ ],
+ coreStack: [
+   { name: 'Angular 18', level: 'expert' },
+   { name: 'TypeScript', level: 'expert' },
+   { name: 'Signals', level: 'expert' },
+   { name: 'RxJS', level: 'expert' },
+   { name: 'SCSS', level: 'mid' },
+ ]
   };
 
   private readonly skills_en = [
@@ -256,6 +274,13 @@ export class DataService {
     c_profile: ' PROFILE',
     c_experience: 'WORK EXPERIENCE',
     c_languages: 'LANGUAGES',
+    coreStack: [
+   { name: 'Angular 18', level: 'expert' },
+   { name: 'TypeScript', level: 'expert' },
+   { name: 'Signals', level: 'expert' },
+   { name: 'RxJS', level: 'expert' },
+   { name: 'SCSS', level: 'mid' },
+ ]
   };
 
   private readonly template_es = {
@@ -303,6 +328,13 @@ export class DataService {
     c_profile: 'PERFIL',
     c_experience: 'EXPERIENCIA LABORAL',
     c_languages: 'IDIOMAS',
+    coreStack: [
+   { name: 'Angular 18', level: 'expert' },
+   { name: 'TypeScript', level: 'expert' },
+   { name: 'Signals', level: 'expert' },
+   { name: 'RxJS', level: 'expert' },
+   { name: 'SCSS', level: 'mid' },
+ ]
   };
 
   private readonly projects_en = [
@@ -350,6 +382,22 @@ export class DataService {
     },
     {
       id: 3,
+      name: 'Headless Date Picker',
+      description:
+        'A fully functional headless date picker built with Vue 3 and TypeScript. Features a framework-agnostic calendar engine powered by the Temporal API, full keyboard navigation, accessible interactions, and customizable theming using CSS variables.',
+      techs: [
+        { name: 'Vue 3', id: 0 },
+        { name: 'TypeScript', id: 1 },
+        { name: 'Temporal API', id: 2 },
+        { name: 'Vite', id: 3 },
+        { name: 'Accessibility', id: 4 },
+      ],
+      photo: '/assets/headless-date-picker.webp',
+      demo: 'https://d2ye34rgjsd5k4.cloudfront.net/',
+      code: 'https://github.com/T800-M101/DatePickerChallenge',
+    },
+    {
+      id: 4,
       name: 'Personal Journal (Under Construction)',
       description: 'A simple app to keep record your memories.',
       techs: [
@@ -375,7 +423,7 @@ export class DataService {
       ],
       photo: '/assets/tech-challenges.webp',
       demo: 'https://technical-challenges.netlify.app/',
-      code: 'https://github.com/T800-M101/Technical-Challenges',
+      code: 'https://github.com/T800-M101/DatePickerChallenge',
     },
 
     {
@@ -406,9 +454,25 @@ export class DataService {
       demo: 'https://timely-boba-434fe9.netlify.app/',
       code: 'https://github.com/T800-M101/3-css-grid-patters',
     },
-
     {
       id: 3,
+      name: 'Headless Date Picker',
+      description:
+        'Un Date Picker Headless completamente funcional construido con Vue 3 y TypeScript. Incluye un motor de calendario desacoplado del framework utilizando la Temporal API, navegación completa con teclado, interacciones accesibles y tematización personalizada mediante variables CSS.',
+      techs: [
+        { name: 'Vue 3', id: 0 },
+        { name: 'TypeScript', id: 1 },
+        { name: 'Temporal API', id: 2 },
+        { name: 'Vite', id: 3 },
+        { name: 'Accesibilidad', id: 4 },
+      ],
+      photo: '/assets/headless-date-picker.webp',
+      demo: 'https://d2ye34rgjsd5k4.cloudfront.net/',
+      code: 'https://github.com/T800-M101/your-repository',
+    },
+
+    {
+      id: 4,
       name: 'Personal Journal (En Desarrollo)',
       description: 'Una aplicación sencilla para guardar tus recuerdos.',
       techs: [
@@ -444,4 +508,6 @@ export class DataService {
       ? this.projects_es
       : this.projects_en;
   }
+
+  readonly home = computed(() => HOME_DATA[this.languageService.getCurrentLanguage() as 'en' | 'es']);
 }

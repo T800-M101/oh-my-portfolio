@@ -42,4 +42,3 @@ export interface Template {
     c_experience: string;
     c_languages: string;
   }
-  

@@ -1,17 +1,84 @@
 <section id="home" class="hero">
-    <div class="container">
-        <div class="hero-content">
-            <h1 class="me"><span>{{profile.name}}</span></h1>
-            <h2>{{profile.title}}</h2>
-            <p>{{profile.intro}}</p>
-            <div class="cta-buttons">
-                <a href="#projects" class="btn">{{templateData.view_work}}</a>
-                <a href="#contact" class="btn btn-outline">{{templateData.contact_me}}</a>
-            </div>
-        </div>
-        <div class="hero-image">
-            <img src={{profile.photo}} alt="Developer Photo">
-        </div>
-    </div>
-</section>
+  <div class="hero-card">
 
+    <!-- TOP -->
+    <div class="hero-top">
+
+      <!-- LEFT -->
+      <div class="hero-content">
+
+        <div class="availability-badge">
+          <span class="avail-dot"></span>
+          {{ isMobile() ? home().mobileAvailabilityLabel : home().availabilityLabel}}
+        </div>
+
+        <h1 class="hero-title"> {{home().hi}} <span>{{ home().name }}</span></h1>
+
+        <p class="hero-role"> {{ home().title }}</p>
+
+        <div class="typed-row">
+          <span class="typed-prefix">{{home().specialty}}</span>
+
+          <span class="typed-tag">
+            {{ currentSkill() }}
+          </span>
+        </div>
+
+        <p class="hero-intro"> {{ home().intro }} </p>
+
+        <div class="cta-buttons">
+          <a href="#projects" class="btn">
+            <i class="fas fa-folder-open"></i>
+            {{ home().view_my_work }}
+          </a>
+
+          <a href="#contact" class="btn btn-outline">
+            <i class="fas fa-envelope"></i>
+            {{ home().contact_me }}
+          </a>
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+      <div class="hero-image">
+
+        <div class="photo-card">
+          <img src="{{home().photo}}" alt="Developer Photo" class="profile-photo" />
+        </div>
+
+        <span class="open-badge"> {{home().open_to_work}} </span>
+
+      </div>
+
+    </div>
+
+    <!-- STATS -->
+    <div class="hero-stats">
+      @for (stat of home().stats; track stat.label) {
+      <div class="hero-stat">
+        <span class="hero-stat-number"> {{ stat.value }} </span>
+
+        <span class="hero-stat-label"> {{ stat.label }} </span>
+      </div>
+      }
+    </div>
+
+    <!-- STACK -->
+      <div class="hero-stack">
+        <span class="stack-label"> {{home().stack}} </span>
+
+        <div class="stack-scroll-container">
+          <div class="stack-chips">
+            @for (skill of home().core_stack; track skill.name) {
+            <span class="stack-chip" [class]="skill.level">
+              <span class="chip-dot"></span>
+              {{ skill.name }}
+            </span>
+            }
+          </div>
+        </div>
+      </div>
+
+  </div>
+</section>
