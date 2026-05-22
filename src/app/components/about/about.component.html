@@ -60,7 +60,7 @@
         <span><i class="fas fa-envelope"></i> {{ about().email }}</span>
         <span><i class="fas fa-map-marker-alt"></i> {{ about().location }}</span>
       </div>
-      <a class="btn" href="assets/Guillermo_Moran_CV.pdf" target="_blank" download="Guillermo_Moran_CV.pdf">
+      <a class="btn" [href]="pdfUrl()" target="_blank" [download]="pdfUrl()">
         <i class="fas fa-download"></i>
         {{ about().pdf_btn }}
       </a>

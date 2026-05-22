@@ -13,10 +13,10 @@ import { PROJECTS_DATA } from '../constants/project-data';
 export class DataService {
   private languageService = inject(LanguageService);
 
-  readonly home = computed(() => HOME_DATA[this.languageService.getCurrentLanguage() as 'en' | 'es']);
-  readonly about = computed(() => ABOUT_DATA[this.languageService.getCurrentLanguage() as 'en' | 'es']);
-  readonly profile = computed(() => PROFILE_DATA[this.languageService.getCurrentLanguage() as 'en' | 'es']);
-  readonly skills = computed(() => SKILLS_DATA[this.languageService.getCurrentLanguage() as 'en' | 'es']);
-  readonly template = computed(() => TEMPLATE_DATA[this.languageService.getCurrentLanguage() as 'en' | 'es']);
-  readonly projects = computed(() => PROJECTS_DATA[this.languageService.getCurrentLanguage() as 'en' | 'es']);
+  readonly home = computed(() => HOME_DATA[this.languageService.currentLanguage() as 'en' | 'es']);
+  readonly about = computed(() => ABOUT_DATA[this.languageService.currentLanguage() as 'en' | 'es']);
+  readonly profile = computed(() => PROFILE_DATA[this.languageService.currentLanguage() as 'en' | 'es']);
+  readonly skills = computed(() => SKILLS_DATA[this.languageService.currentLanguage() as 'en' | 'es']);
+  readonly template = computed(() => TEMPLATE_DATA[this.languageService.currentLanguage() as 'en' | 'es']);
+  readonly projects = computed(() => PROJECTS_DATA[this.languageService.currentLanguage() as 'en' | 'es']);
 }

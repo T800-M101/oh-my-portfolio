@@ -49,7 +49,8 @@ export const ABOUT_DATA = {
     email: 'tuahil@gmail.com',
     location: 'Monterrey N.L.',
     my_value: 'What I bring to a team',
-    pdf_btn: 'Download CV PDF'
+    pdf_btn: 'Download CV PDF',
+    pdf_url: 'assets/CV_2026_EN_GUILLERMO MORÁN L.pdf'
   },
   es: {
     about_me: 'Sobre Mí',
@@ -99,6 +100,7 @@ export const ABOUT_DATA = {
     email: 'tuahil@gmail.com',
     location: 'Monterrey, N.L.',
     my_value: 'Lo que aporto a un equipo',
-    pdf_btn: 'Descargar CV PDF'
+    pdf_btn: 'Descargar CV PDF',
+    pdf_url: 'assets/CV_2026_ES_GUILLERMO MORÁN L.pdf'
   },
 };
