@@ -27,7 +27,7 @@ export const PROJECTS_DATA = {
         { name: 'RxJS', id: 5 },
       ],
       photo: '/assets/journal.png',
-      demo: 'journal-momentum.netlify.app',
+      demo: 'https://journal-momentum.netlify.app/',
       code: 'https://github.com/T800-M101/momentum',
     },
     {
@@ -106,7 +106,7 @@ export const PROJECTS_DATA = {
         { name: 'RxJS', id: 5 },
       ],
       photo: '/assets/journal.png',
-      demo: 'journal-momentum.netlify.app',
+      demo: 'https://journal-momentum.netlify.app/',
       code: 'https://github.com/T800-M101/momentum',
     },
 
