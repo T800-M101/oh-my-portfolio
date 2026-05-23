@@ -41,7 +41,7 @@ export const PROJECTS_DATA = {
         { name: 'Prisma', id: 2 },
         { name: 'JWT', id: 3 }
       ],
-      photo: '/assets/nestjs.png',
+      photo: '/assets/api.webp',
       demo: 'https://github.com/T800-M101/momentumApi',
       code: 'https://github.com/T800-M101/momentumApi',
     },
@@ -121,7 +121,7 @@ export const PROJECTS_DATA = {
         { name: 'Prisma', id: 2 },
         { name: 'JWT', id: 3 }
       ],
-      photo: '/assets/nestjs.png',
+      photo: '/assets/api.webp',
       demo: 'https://github.com/T800-M101/momentumApi',
       code: 'https://github.com/T800-M101/momentumApi',
     },
