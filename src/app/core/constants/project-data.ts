@@ -32,18 +32,20 @@ export const PROJECTS_DATA = {
     },
     {
       id: 2,
-      name: 'NestJS Backend API for Momentun App',
+      name: 'api-starter',
       description:
-        'A backend with modules: login, users, classes, instructors, memeberships, etc.',
+        'Professional base template for NestJS with Docker, Prisma, and PostgreSQL. Includes JWT authentication management, Winston logging, data validation, and configuration for production-ready deployment.',
       techs: [
-        { name: 'Nest JS', id: 0 },
+        { name: 'Nest JS 11', id: 0 },
         { name: 'Postgres', id: 1 },
-        { name: 'Prisma', id: 2 },
-        { name: 'JWT', id: 3 }
+        { name: 'Prisma 6', id: 2 },
+        { name: 'JWT', id: 3 },
+        { name: 'Docker', id: 4 },
+        { name: 'Winston', id: 5 },
       ],
-      photo: '/assets/api.webp',
-      demo: 'https://github.com/T800-M101/momentumApi',
-      code: 'https://github.com/T800-M101/momentumApi',
+      photo: '/assets/starter-api.webp',
+      demo: 'https://github.com/T800-M101/API-STARTER',
+      code: 'https://github.com/T800-M101/API-STARTER',
     },
     {
       id: 3,
@@ -109,21 +111,22 @@ export const PROJECTS_DATA = {
       demo: 'https://journal-momentum.netlify.app/',
       code: 'https://github.com/T800-M101/momentum',
     },
-
     {
       id: 2,
-      name: 'NestJS Backend API para la aplicación Momentum',
+      name: 'api-starter',
       description:
-        'Un backend con módulos: login, usuarios, clases, instructores, membresías, etc.',
+        'Plantilla base profesional para NestJS con Docker, Prisma y PostgreSQL. Incluye gestión de autenticación JWT, logs con Winston, validación de datos y configuración para despliegue listo para producción.',
       techs: [
-        { name: 'Nest JS', id: 0 },
+        { name: 'Nest JS 11', id: 0 },
         { name: 'Postgres', id: 1 },
-        { name: 'Prisma', id: 2 },
-        { name: 'JWT', id: 3 }
+        { name: 'Prisma 6', id: 2 },
+        { name: 'JWT', id: 3 },
+        { name: 'Docker', id: 4 },
+        { name: 'Winston', id: 5 },
       ],
-      photo: '/assets/api.webp',
-      demo: 'https://github.com/T800-M101/momentumApi',
-      code: 'https://github.com/T800-M101/momentumApi',
+      photo: '/assets/starter-api.webp',
+      demo: 'https://github.com/T800-M101/API-STARTER',
+      code: 'https://github.com/T800-M101/API-STARTER',
     },
     {
       id: 3,
