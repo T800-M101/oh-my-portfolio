@@ -78,6 +78,24 @@ export const PROJECTS_DATA = {
       demo: 'https://d2ye34rgjsd5k4.cloudfront.net/',
       code: 'https://github.com/T800-M101/DatePickerChallenge',
     },
+
+    {
+      id: 5,
+      name: 'MemokClient',
+      description:
+        'A modern API testing and management tool built with Angular 20. Features request management with collection organization, environment variable resolution, cURL import parsing, and Google Drive synchronization for seamless backup and team usage.',
+      techs: [
+        { name: 'Angular 20', id: 0 },
+        { name: 'TypeScript', id: 1 },
+        { name: 'Angular Signals', id: 2 },
+        { name: 'RxJS', id: 3 },
+        { name: 'Express.js', id: 4 },
+        { name: 'Google Drive API', id: 5 },
+      ],
+      photo: '/assets/memo_client.webp',
+      demo: 'https://github.com/T800-M101/memokClient',
+      code: 'https://github.com/T800-M101/memokClient',
+    },
   ],
 
   es: [
@@ -158,6 +176,23 @@ export const PROJECTS_DATA = {
       photo: '/assets/headless-date-picker.webp',
       demo: 'https://d2ye34rgjsd5k4.cloudfront.net/',
       code: 'https://github.com/T800-M101/your-repository',
+    },
+    {
+      id: 5,
+      name: 'MemokClient',
+      description:
+        'Una herramienta moderna de gestión y prueba de APIs construida con Angular 20. Incluye gestión de peticiones con organización en colecciones, resolución de variables de entorno, análisis de comandos cURL y sincronización con Google Drive para respaldos y uso colaborativo.',
+      techs: [
+        { name: 'Angular 20', id: 0 },
+        { name: 'TypeScript', id: 1 },
+        { name: 'Angular Signals', id: 2 },
+        { name: 'RxJS', id: 3 },
+        { name: 'Express.js', id: 4 },
+        { name: 'Google Drive API', id: 5 },
+      ],
+      photo: '/assets/memo_client.webp',
+      demo: 'https://github.com/T800-M101/memokClient',
+      code: 'https://github.com/T800-M101/memokClient',
     },
   ],
 };
